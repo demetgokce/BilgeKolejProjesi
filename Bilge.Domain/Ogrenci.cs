@@ -16,17 +16,17 @@ namespace Bilge.Domain
 
         [Required(ErrorMessage = "Lütfen öğrencinin adını yazınız")]
         [Display(Name = "Adı")]
-        public string Ad { get; set; }
+        public string Adi { get; set; }
 
         [Required(ErrorMessage = "Lütfen öğrencinin soyadını yazınız")]
         [Display(Name = "Soyadı")]
-        public string Soyad { get; set; }
+        public string Soyadi { get; set; }
 
         [Required]
         [MinLength(11, ErrorMessage = "T.C. kimlik numarası 11 karakterden oluşmalıdır.")]
         [MaxLength(11, ErrorMessage = "T.C. kimlik numarası 11 karakterden oluşmalıdır.")]
         [Display(Name = "T.C. Kimlik No")]
-        public string KimlikNo { get; set; }
+        public string TcNo { get; set; }
 
         [Required]
         [DataType(DataType.EmailAddress)]
@@ -53,8 +53,11 @@ namespace Bilge.Domain
         [Display(Name = "Okuldan Çıkış Tarihi")]
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime CikisTarih { get; set; }
+         public int SinifId { get; set; }
+        public virtual Sinif Sinif { get; set; }
         public virtual ICollection<DersProgram> DersPrograms { get; set; }
         public virtual ICollection<Yoklama> Yoklamas { get; set; }
         public virtual ICollection<OgrenciDonemNot> OgrenciDonemNot { get; set; }
+        public virtual ICollection<DonemDers> DonemDers { get; set; }
     }
 }

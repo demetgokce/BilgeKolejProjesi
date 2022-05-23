@@ -1,4 +1,6 @@
 ﻿using Bilge.DAL.Abstract;
+using Bilge.Domain;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +17,7 @@ namespace Bilge.DAL.EfCore
         private DbSet<TEntity> table = null;
         public DbRepository()
         {
-            dbContext = new DbContext();
+            dbContext = new BilgeDbContext();
         }
 
         public TEntity GetById(int id)

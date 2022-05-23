@@ -22,12 +22,18 @@ namespace Bilge.Domain
         [MinLength(11, ErrorMessage = "T.C. kimlik numarası 11 karakterden oluşmalıdır.")]
         [MaxLength(11, ErrorMessage = "T.C. kimlik numarası 11 karakterden oluşmalıdır.")]
         [Display(Name = "T.C. Kimlik No")]
-        public string KimlikNo { get; set; }
+        public string TcNo { get; set; }
 
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "E-Posta Adresi")]
         public string EPosta { get; set; }
+      
+        
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Telefon Numarasi")]
+        public string Gsm { get; set; }
 
         [Required]
         [Display(Name = "Doğum Tarihi")]
