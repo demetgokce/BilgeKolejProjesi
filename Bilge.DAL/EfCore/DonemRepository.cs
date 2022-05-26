@@ -49,7 +49,7 @@ namespace Bilge.DAL.EfCore
         {
             try
             {
-                _veritabani.Donemler.Add(kayit);
+                _veritabani.Donem.Add(kayit);
                 _veritabani.SaveChanges();
                 return new IslemSonuc<int>
                 {

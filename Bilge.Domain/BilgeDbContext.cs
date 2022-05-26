@@ -23,7 +23,19 @@ namespace Bilge.Domain
         public DbSet<OgrenciDonemNot> OgrenciDonemNotlar { get; set; }
         public DbSet<Yoklama> Yoklamalar { get; set; }
 
+        public DbSet <ApplicationUser> applicationUsers { get; set; }
+
+        public BilgeDbContext()
+        { 
         
+        }
+
+        public BilgeDbContext(DbContextOptions<BilgeDbContext> options) : base(options)
+        {
+
+
+
+        }
 
 
 
