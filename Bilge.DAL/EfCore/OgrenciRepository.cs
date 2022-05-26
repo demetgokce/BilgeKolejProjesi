@@ -31,7 +31,7 @@ namespace Bilge.DAL.EfCore
                 return new IslemSonuc<List<Ogrenci>>
                 {
                     BasariliMi = true,
-                    Veri = _veritabani.Ogrenciler.Where(o => o.SinifId == sinifId).OrderBy(o => o.SinifAdi).ToList()
+                    Veri = _veritabani.Ogrenciler.Where(o => o.SinifId == sinifId).OrderBy(o => o.Adi).ToList()
                 };
             }
             catch (Exception hata) { return new IslemSonuc<List<Ogrenci>> { Mesaj = hata.Message }; }

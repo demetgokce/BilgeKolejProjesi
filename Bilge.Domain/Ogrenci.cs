@@ -55,6 +55,8 @@ namespace Bilge.Domain
         public DateTime CikisTarih { get; set; }
          public int SinifId { get; set; }
         public virtual Sinif Sinif { get; set; }
+        public int DersId { get; set; }
+        public virtual Ders Ders { get; set; }
         public virtual ICollection<DersProgram> DersPrograms { get; set; }
         public virtual ICollection<Yoklama> Yoklamas { get; set; }
         public virtual ICollection<OgrenciDonemNot> OgrenciDonemNot { get; set; }

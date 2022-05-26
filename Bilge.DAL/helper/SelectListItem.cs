@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Bilge.Domain.HelperModels
 {
-    public class Session
+  public  class SelectListItem
     {
-        public int Id { get; set; }
-        public int DersId { get; set; }
-      
+
+        public string Text { get; set; }
+        public string Value { get; set; }
+        public bool Selected { get; set; }
     }
 }

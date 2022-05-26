@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace Bilge.DAL.EfCore
 {
-  public  class BaseRepository:IBaseRepository
+    public interface IBaseRepository : IDisposable { }
+    public  class BaseRepository:IBaseRepository
     {
         protected BilgeDbContext _veritabani = new BilgeDbContext();
         protected UyelikRepository _uyelik;

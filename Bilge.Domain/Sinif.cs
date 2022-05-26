@@ -26,6 +26,10 @@ namespace Bilge.Domain
         public virtual ICollection<Ders> Dersler { get; set; }
 
         public virtual ICollection<DersProgram> DersPrograms { get; set; }
-      
+
+        public static Sinif FirstOrDefault()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

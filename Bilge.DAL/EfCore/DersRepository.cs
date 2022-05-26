@@ -10,7 +10,6 @@ namespace Bilge.DAL.EfCore
 {
    public  class DersRepository:BaseRepository
     {
-
         public DersRepository() : base() { }
         public IslemSonuc<List<Ders>> GetirTumu()
         {
@@ -25,7 +24,18 @@ namespace Bilge.DAL.EfCore
             catch (Exception hata) { return new IslemSonuc<List<Ders>> { Mesaj = hata.Message }; }
 
         }
-       
+        public IslemSonuc<List<Ders>> GetirSinifDersleri(int sinifId)
+        {
+            try
+            {
+                return new IslemSonuc<List<Ders>>
+                {
+                    BasariliMi = true,
+                    Veri = _veritabani.Ders.Where(d => d.SinifId == sinifId).OrderBy(o => o.SinifId).ToList()
+                };
+            }
+            catch (Exception hata) { return new IslemSonuc<List<Ders>> { Mesaj = hata.Message }; }
+        }
         public IslemSonuc<Ders> Getir(int id)
         {
             try
@@ -77,8 +87,8 @@ namespace Bilge.DAL.EfCore
                 if (duzenlenecekKayitlar.Count() > 0)
                 {
                     var duzenlenecekKayit = duzenlenecekKayitlar.FirstOrDefault();
-                    duzenlenecekKayit.DersAd = kayit.DersAd;
-                    
+                    duzenlenecekKayit.DersAd= kayit.DersAd;
+                    duzenlenecekKayit.SinifId = kayit.SinifId;
                     duzenlenecekKayit.Kod = kayit.Kod;
 
                     _veritabani.SaveChanges();
@@ -133,6 +143,9 @@ namespace Bilge.DAL.EfCore
             }
         }
 
-       
+     
+
+
+
     }
 }

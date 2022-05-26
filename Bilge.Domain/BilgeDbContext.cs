@@ -1,7 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration.Conventions;
+
 
 using System.Linq;
 using System.Text;
@@ -26,14 +27,11 @@ namespace Bilge.Domain
 
 
 
-             protected override void OnModelCreating(ModelBuilder modelBuilder)
-             {
+             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+                 optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-7I7PU0G;Initial Catalog=BilgeKolej;Integrated //Security=True;Connect //Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
-
-                 modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-                 modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-                 base.OnModelCreating(modelBuilder);
-
+          
              }
              
 
@@ -53,10 +51,12 @@ namespace Bilge.Domain
 
     public class IdentityContext : IdentityDbContext<ApplicationUser>
     {
-        public IdentityContext() : base("BilgeVeritabani") { }
+  
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+
             base.OnModelCreating(modelBuilder);
         }
     }

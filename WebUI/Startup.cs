@@ -1,8 +1,12 @@
+using Bilge.DAL.EfCore;
+using Bilge.Domain;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +27,13 @@ namespace WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<BilgeDbContext>((options => options.UseSqlServer(@"Data Source=DESKTOP-7I7PU0G;Initial Catalog=BilgeKolejProje;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")));
+
+            services.AddScoped<DersRepository>();
+            services.AddScoped<OgretmenRepository>();
+            services.AddScoped<OgrenciRepository>();
+            services.AddScoped<SinifRepository>();
+            services.AddScoped<VeliRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -10,6 +10,7 @@ namespace Bilge.DAL.EfCore
 {
    public class OgretmenRepository: BaseRepository
     {
+
         public OgretmenRepository(bool uyelikAlinsinMi = true) : base(uyelikAlinsinMi) { }
         public IslemSonuc<List<Ogretmen>> GetirTumu()
         {
@@ -18,20 +19,20 @@ namespace Bilge.DAL.EfCore
                 return new IslemSonuc<List<Ogretmen>>
                 {
                     BasariliMi = true,
-                    Veri = _veritabani.Ogretmen.OrderBy(o => o.Ad).ToList()
+                    Veri = _veritabani.Ogretmenler.OrderBy(o => o.Ad).ToList()
                 };
             }
             catch (Exception hata) { return new IslemSonuc<List<Ogretmen>> { Mesaj = hata.Message }; }
 
         }
-        public IslemSonuc<List<Ogretmen>> GetirDersOgretimGorevlileri(int dersId)
+        public IslemSonuc<List<Ogretmen>> GetirDersOgretmenleri(int DersId)
         {
             try
             {
                 return new IslemSonuc<List<Ogretmen>>
                 {
                     BasariliMi = true,
-                    Veri = _veritabani.Ogretmen.Where(o => o.DersId == dersId).OrderBy(o => o.Ad).ToList()
+                    Veri = _veritabani.Ogretmenler.Where(o => o.DersId == DersId).OrderBy(o => o.Ad).ToList()
                 };
             }
             catch (Exception hata) { return new IslemSonuc<List<Ogretmen>> { Mesaj = hata.Message }; }
@@ -40,8 +41,31 @@ namespace Bilge.DAL.EfCore
         {
             try
             {
-                var ogretmen = (from o in _veritabani.Ogretmen
+                var Ogretmen = (from o in _veritabani.Ogretmenler
                                           where o.Id == id
+                                          orderby o.Ad, o.Soyad
+                                          select o);
+                if (Ogretmen.Count() > 0)
+                {
+                    return new IslemSonuc<Ogretmen>
+                    {
+                        BasariliMi = true,
+                        Veri = Ogretmen.FirstOrDefault()
+                    };
+                }
+                else
+                {
+                    return new IslemSonuc<Ogretmen>();
+                }
+            }
+            catch (Exception hata) { return new IslemSonuc<Ogretmen> { Mesaj = hata.Message }; }
+        }
+        public IslemSonuc<Ogretmen> Getir(string TcNo)
+        {
+            try
+            {
+                var ogretmen = (from o in _veritabani.Ogretmenler
+                                          where o.TcNo == TcNo
                                           orderby o.Ad, o.Soyad
                                           select o);
                 if (ogretmen.Count() > 0)
@@ -59,34 +83,11 @@ namespace Bilge.DAL.EfCore
             }
             catch (Exception hata) { return new IslemSonuc<Ogretmen> { Mesaj = hata.Message }; }
         }
-        public IslemSonuc<Ogretmen> Getir(string TcNo)
-        {
-            try
-            {
-                var ogretimGorevlileri = (from o in _veritabani.Ogretmen
-                                          where o.TcNo == TcNo
-                                          orderby o.Ad, o.Soyad
-                                          select o);
-                if (ogretimGorevlileri.Count() > 0)
-                {
-                    return new IslemSonuc<Ogretmen>
-                    {
-                        BasariliMi = true,
-                        Veri = Ogretmen.FirstOrDefault()
-                    };
-                }
-                else
-                {
-                    return new IslemSonuc<Ogretmen>();
-                }
-            }
-            catch (Exception hata) { return new IslemSonuc<Ogretmen> { Mesaj = hata.Message }; }
-        }
         public IslemSonuc<int> Kaydet(Ogretmen kayit)
         {
             try
             {
-                _veritabani.Ogretmen.Add(kayit);
+                _veritabani.Ogretmenler.Add(kayit);
                 _veritabani.SaveChanges();
 
                 var uyelikEkleSonuc = _uyelik.KullaniciEkle(kayit.TcNo, "Ogretmen");
@@ -122,14 +123,14 @@ namespace Bilge.DAL.EfCore
         {
             try
             {
-                var duzenlenecekKayitlar = _veritabani.Ogretmen.Where(o => o.Id == kayit.Id);
+                var duzenlenecekKayitlar = _veritabani.Ogretmenler.Where(o => o.Id == kayit.Id);
                 if (duzenlenecekKayitlar.Count() > 0)
                 {
                     var duzenlenecekKayit = duzenlenecekKayitlar.FirstOrDefault();
                     duzenlenecekKayit.Ad = kayit.Ad;
                     duzenlenecekKayit.Soyad = kayit.Soyad;
                     duzenlenecekKayit.TcNo = kayit.TcNo;
-                    
+                    duzenlenecekKayit.DersId = kayit.DersId;
                     duzenlenecekKayit.DogumTarih = kayit.DogumTarih;
                     duzenlenecekKayit.GirisTarih = kayit.GirisTarih;
                     duzenlenecekKayit.CikisTarih = kayit.CikisTarih;
@@ -160,11 +161,11 @@ namespace Bilge.DAL.EfCore
         {
             try
             {
-                var silinecekKayitlar = _veritabani.Ogretmen.Where(o => o.Id == id);
+                var silinecekKayitlar = _veritabani.Ogretmenler.Where(o => o.Id == id);
                 if (silinecekKayitlar.Count() > 0)
                 {
                     var silinecekKayit = silinecekKayitlar.FirstOrDefault();
-                    _veritabani.Ogretmen.Remove(silinecekKayit);
+                    _veritabani.Ogretmenler.Remove(silinecekKayit);
                     _veritabani.SaveChanges();
                     return new IslemSonuc { BasariliMi = true };
                 }
@@ -188,9 +189,9 @@ namespace Bilge.DAL.EfCore
         }
 
 
-        public IslemSonuc<List<DonemDers>> GetirDonemDersleri_SonDonem(int ogretmenId)
+        public IslemSonuc<List<NDonemDers>> GetirDonemDersleri_SonDonem(int ogretmenId)
         {
-            var sonDonemler = (from d in _veritabani.Donemler
+            var sonDonemler = (from d in _veritabani.Donem
                                orderby new { d.Yil, d.DonemTip } descending
                                select d).ToList();
 
@@ -201,67 +202,67 @@ namespace Bilge.DAL.EfCore
                 var dersler = (from d in _veritabani.DonemDers
                                where d.OgretmenId == ogretmenId && d.DonemId == sonDonem
                                orderby new { d.Donem.Yil, d.Donem.DonemTip } descending
-                               select new DonemDers
+                               select new NDonemDers
                                {
                                    Id = d.Id,
-                                   Ad = d.Ders.Ad,
+                                   Ad = d.Ders.DersAd,
                                    Yil = d.Donem.Yil,
                                    DonemTip = d.Donem.DonemTip,
                                    DonemId = d.DonemId
                                }).ToList();
 
-                return new IslemSonuc<List<DonemDers>>
+                return new IslemSonuc<List<NDonemDers>>
                 {
                     BasariliMi = true,
                     Veri = dersler
                 };
             }
-            return new IslemSonuc<List<DonemDers>>();
+            return new IslemSonuc<List<NDonemDers>>();
         }
-        public IslemSonuc<List<DonemDers>> GetirDonemDersleri_Tumu(int ogretimGorevlisiId)
+        public IslemSonuc<List<NDonemDers>> GetirDonemDersleri_Tumu(int ogretmenId)
         {
-            var dersler = (from d in _veritabani.DonemDersler
-                           where d.OgretimGorevlisiId == ogretimGorevlisiId
+            var dersler = (from d in _veritabani.DonemDers
+                           where d.OgretmenId == ogretmenId
                            orderby new { d.Donem.Yil, d.Donem.DonemTip } descending
-                           select new DonemDers
+                           select new NDonemDers
                            {
                                Id = d.Id,
-                               Ad = d.Ders.Ad,
+                               Ad = d.Ders.DersAd,
                                Yil = d.Donem.Yil,
                                DonemTip = d.Donem.DonemTip,
                                DonemId = d.DonemId
                            }).ToList();
 
-            return new IslemSonuc<List<DonemDers>>
+            return new IslemSonuc<List<NDonemDers>>
             {
                 BasariliMi = true,
                 Veri = dersler
             };
         }
-        public IslemSonuc<List<DersDonem>> GetirDonem_TumDonemler(int ogretmenId)
+        public IslemSonuc<List<NDersDonem>> GetirDonem_TumDonemler(int ogretmenId)
         {
             try
             {
                 var donemler = (from dd in _veritabani.DonemDers
                                 where dd.OgretmenId == ogretmenId
                                 orderby new { dd.Donem.Yil, dd.Donem.DonemTip } descending
-                                select new DersDonem
+                                select new NDersDonem
                                 {
                                     Id = dd.DonemId,
                                     DonemTip = dd.Donem.DonemTip,
                                     Yil = dd.Donem.Yil
                                 }).Distinct().ToList();
 
-                return new IslemSonuc<List<DersDonem>>
+                return new IslemSonuc<List<NDersDonem>>
                 {
                     BasariliMi = true,
                     Veri = donemler
                 };
 
             }
-            catch (Exception hata) { return new IslemSonuc<List<DersDonem>> { Mesaj = hata.Message }; }
+            catch (Exception hata) { return new IslemSonuc<List<NDersDonem>> { Mesaj = hata.Message }; }
         }
-        public IslemSonuc<List<DersDonem>> GetirDonem_SonDonem(int ogretimGorevlisiId)
+        public IslemSonuc<List<NDersDonem>> GetirDonem_SonDonem(int ogretmenId)
         {
             try
             {
@@ -275,9 +276,9 @@ namespace Bilge.DAL.EfCore
 
 
                     var donemler = (from dd in _veritabani.DonemDers
-                                    where dd.OgretmenId == OgretmenId && dd.DonemId == sonDonem
+                                    where dd.OgretmenId == ogretmenId && dd.DonemId == sonDonem
                                     orderby new { dd.Donem.Yil, dd.Donem.DonemTip } descending
-                                    select new DersDonem
+                                    select new NDersDonem
                                     {
                                         Id = dd.DonemId,
                                         DonemTip = dd.Donem.DonemTip,
@@ -285,7 +286,7 @@ namespace Bilge.DAL.EfCore
                                     }).Distinct().ToList();
 
 
-                    return new IslemSonuc<List<DersDonem>>
+                    return new IslemSonuc<List<NDersDonem>>
                     {
                         BasariliMi = true,
                         Veri = donemler
@@ -293,22 +294,22 @@ namespace Bilge.DAL.EfCore
                 }
                 else
                 {
-                    return new IslemSonuc<List<DersDonem>> { Mesaj = "Öğretmen son dönemde ders vermemiştir" };
+                    return new IslemSonuc<List<NDersDonem>> { Mesaj = "Öğretmen son dönemde ders vermemiştir" };
                 }
             }
-            catch (Exception hata) { return new IslemSonuc<List<DersDonem>> { Mesaj = hata.Message }; }
+            catch (Exception hata) { return new IslemSonuc<List<NDersDonem>> { Mesaj = hata.Message }; }
         }
 
         public IslemSonuc<List<OgrenciDersNotu>> GetirDonemDersi_OgrenciNotlari(int donemDersId)
         {
-            var dersler = (from d in _veritabani.OgrenciDonemNot
+            var dersler = (from d in _veritabani.OgrenciDonemNotlar
                            where d.DonemDersId == donemDersId
-                           orderby new { d.DonemDers.Donem.Yil, d.DonemDers.Donem.DonemTip, d.DonemDers.Ders.Ad } descending
+                           orderby new { d.DonemDers.Donem.Yil, d.DonemDers.Donem.DonemTip, d.DonemDers.Ders.DersAd } descending
                            select new OgrenciDersNotu
                            {
                                Id = d.Id,
                                TcNo = d.Ogrenci.TcNo,
-                               AdSoyad = d.Ogrenci.Ad + " " + d.Ogrenci.Soyad,
+                               AdSoyad = d.Ogrenci.Adi + " " + d.Ogrenci.Soyadi,
                                Sinav1 = d.Sinav1,
                                Sinav2 = d.Sinav2,
                                SonSinav = d.SonSinav,
@@ -322,22 +323,7 @@ namespace Bilge.DAL.EfCore
             };
         }
 
-        public IslemSonuc<SelectList> GetirDersOgretmen_SelectList(int DersId)
-        {
-            var ogretmen = (from o in _veritabani.Ogretmen
-                                      where o.DersId == DersId
-                                      orderby o.Ad
-                                      select new SelectListItem
-                                      {
-                                          Text = o.Ad + " " + o.Soyad,
-                                          Value = o.Id.ToString()
-                                      }).ToList();
+       
 
-            return new IslemSonuc<SelectList>
-            {
-                BasariliMi = true,
-                Veri = new SelectList(ogretimGorevlileri, "Value", "Text")
-            };
-        }
     }
 }
