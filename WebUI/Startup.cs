@@ -1,5 +1,6 @@
 using Bilge.DAL.EfCore;
 using Bilge.Domain;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -28,12 +29,32 @@ namespace WebUI
         {
             services.AddControllersWithViews();
             services.AddDbContext<BilgeDbContext>((options => options.UseSqlServer(@"Data Source=DESKTOP-7I7PU0G;Initial Catalog=BilgeKolejProje;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")));
+            
 
             services.AddScoped<DersRepository>();
             services.AddScoped<OgretmenRepository>();
             services.AddScoped<OgrenciRepository>();
             services.AddScoped<SinifRepository>();
             services.AddScoped<VeliRepository>();
+
+
+
+
+            #region Cookie Base Authentication Ayarlari
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(x =>
+                {
+                    x.LoginPath = "/OgrenciIslem/GirisYap"; //Giris Sayfasi
+                    x.LogoutPath = "/OgrenciIslem/Cikis"; // Cikis 
+                    x.AccessDeniedPath = "/OgrenciIslem/YetkiHatasi";
+                    x.Cookie.HttpOnly = true;
+                    x.Cookie.Name = "Bilge";
+                    x.Cookie.SameSite = Microsoft.AspNetCore.Http.SameSiteMode.Strict;
+                    x.Cookie.SecurePolicy = Microsoft.AspNetCore.Http.CookieSecurePolicy.SameAsRequest;
+                    x.ExpireTimeSpan = TimeSpan.FromMinutes(20); // Cookie'nin ömrünü belirler.
+                });
+            #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,11 +71,17 @@ namespace WebUI
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                name: "areas",
+               pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

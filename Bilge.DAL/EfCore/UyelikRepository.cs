@@ -2,6 +2,7 @@
 using Bilge.Domain.HelperModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace Bilge.DAL.EfCore
 {
     public class UyelikRepository
     {
-       // #region Değişkenler
+        //#region Değişkenler
 
         //IdentityContext _db = new IdentityContext();
 
@@ -21,7 +22,7 @@ namespace Bilge.DAL.EfCore
         //{
         //    get
         //    {
-        //        return HttpContext.Current.GetOwinContext().Authentication;
+        //        
         //    }
         //}
 
@@ -106,7 +107,7 @@ namespace Bilge.DAL.EfCore
         //            return new IslemSonuc<Session> { Mesaj = "Lütfen öğrenci bilgilerini kontrol ediniz" };
 
         //        session.Id = ogrenci.Veri.Id;
-        //        session.DersId = ogrenci.Veri.DersId;
+        //        session.Id = ogrenci.Veri.SinifId;
         //    }
         //    else if (tip == UyeTip.Ogretmen)
         //    {
@@ -131,9 +132,9 @@ namespace Bilge.DAL.EfCore
         //            return new IslemSonuc<Session> { Mesaj = "Lütfen üye bilgilerini kontrol ediniz" };
         //    }
 
-        //    var kullanici = UserManager.Find(kullaniciAdi, sifre);
+        //    var kullanici = UserManager.FindByName(kullaniciAdi, sifre);
         //    if (kullanici != null)
-        //    {
+        //   {
         //        AuthenticationManager.SignOut();
         //        var kimlik = UserManager.CreateIdentity(kullanici, DefaultAuthenticationTypes.ApplicationCookie);
         //        AuthenticationManager.SignIn(new AuthenticationProperties(), kimlik);
