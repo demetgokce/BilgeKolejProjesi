@@ -23,8 +23,7 @@ namespace Bilge.Domain
         public DbSet<OgrenciDonemNot> OgrenciDonemNotlar { get; set; }
         public DbSet<Yoklama> Yoklamalar { get; set; }
 
-        public DbSet <ApplicationUser> applicationUsers { get; set; }
-
+   
         public BilgeDbContext()
         { 
         
@@ -45,9 +44,17 @@ namespace Bilge.Domain
 
           
              }
-             
 
 
+        public class IdentityContext : IdentityDbContext<ApplicationUser>
+        {
+            
+
+            protected override void OnModelCreating(ModelBuilder modelBuilder)
+            {
+                base.OnModelCreating(modelBuilder);
+            }
+        }
         // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         // {
 
@@ -55,7 +62,7 @@ namespace Bilge.Domain
         // }
 
 
-       
+
 
 
 

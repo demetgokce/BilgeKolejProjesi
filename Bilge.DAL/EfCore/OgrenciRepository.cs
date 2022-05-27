@@ -83,42 +83,42 @@ namespace Bilge.DAL.EfCore
             catch (Exception hata) { return new IslemSonuc<Ogrenci> { Mesaj = hata.Message }; }
         }
 
-        public IslemSonuc<int> Kaydet(Ogrenci kayit)
-        {
-            try
-            {
-                _veritabani.Ogrenciler.Add(kayit);
-                _veritabani.SaveChanges();
+        //public IslemSonuc<int> Kaydet(Ogrenci kayit)
+        //{
+        //    try
+        //    {
+        //        _veritabani.Ogrenciler.Add(kayit);
+        //        _veritabani.SaveChanges();
 
-                var uyelikEkleSonuc = _uyelik.KullaniciEkle(kayit.TcNo, "Ogrenci");
-                if (uyelikEkleSonuc.BasariliMi)
-                {
-                    return new IslemSonuc<int>
-                    {
-                        BasariliMi = true,
-                        Veri = kayit.Id
-                    };
-                }
-                else
-                {
-                    return new IslemSonuc<int>
-                    {
-                        BasariliMi = false,
-                        Veri = kayit.Id,
-                        Mesaj = uyelikEkleSonuc.Mesaj
-                    };
-                }
-                return null;
-            }
-            catch (Exception hata)
-            {
-                return new IslemSonuc<int>()
-                {
-                    BasariliMi = false,
-                    Mesaj = hata.Message
-                };
-            }
-        }
+        //        var uyelikEkleSonuc = _uyelik.KullaniciEkle(kayit.TcNo, "Ogrenci");
+        //        if (uyelikEkleSonuc.BasariliMi)
+        //        {
+        //            return new IslemSonuc<int>
+        //            {
+        //                BasariliMi = true,
+        //                Veri = kayit.Id
+        //            };
+        //        }
+        //        else
+        //        {
+        //            return new IslemSonuc<int>
+        //            {
+        //                BasariliMi = false,
+        //                Veri = kayit.Id,
+        //                Mesaj = uyelikEkleSonuc.Mesaj
+        //            };
+        //        }
+        //        return null;
+        //    }
+        //    catch (Exception hata)
+        //    {
+        //        return new IslemSonuc<int>()
+        //        {
+        //            BasariliMi = false,
+        //            Mesaj = hata.Message
+        //        };
+        //    }
+        //}
         public IslemSonuc Guncelle(Ogrenci kayit)
         {
             try
