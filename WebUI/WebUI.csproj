@@ -12,12 +12,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Areas\Yonetici\Controllers\DersController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Areas\Yonetici\Views\Ders\DersSil.cshtml" />
+    <Content Include="Areas\Yonetici\Views\Ders\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Bilge.DAL\Bilge.DAL.csproj" />
     <ProjectReference Include="..\Bilge.Domain\Bilge.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Area\Yonetici\Models\" />
+    <Folder Include="Areas\Yonetici\Data\" />
+    <Folder Include="Areas\Yonetici\Models\" />
   </ItemGroup>
 
 </Project>

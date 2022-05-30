@@ -16,25 +16,25 @@ namespace WebUI.Controllers
 
 
 
-        #region Değişkenler
+        //#region Değişkenler
 
-        DonemDersRepository _donemDersRepository = new DonemDersRepository();
-        OgrenciDonemDersRepository _ogrenciDonemDersRepository = new OgrenciDonemDersRepository();
-        UyelikRepository _uyelik = new UyelikRepository();
+        //DonemDersRepository _donemDersRepository = new DonemDersRepository();
+        //OgrenciDonemDersRepository _ogrenciDonemDersRepository = new OgrenciDonemDersRepository();
+        //UyelikRepository _uyelik = new UyelikRepository();
 
-        #endregion
+        //#endregion
 
-        #region Üyelik İşlemleri
+        //#region Üyelik İşlemleri
 
-        [AllowAnonymous]
-        public ActionResult GirisYap()
-        {
-            return View();
-        }
+        //[AllowAnonymous]
+        //public ActionResult GirisYap()
+        //{
+        //    return View();
+        //}
 
 
 
-        #endregion
+        //#endregion
 
     }
 

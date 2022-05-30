@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
+    <ProjectReference Include="..\Bilge.DAL\Bilge.DAL.csproj" />
+    <ProjectReference Include="..\Bilge.Domain\Bilge.Domain.csproj" />
   </ItemGroup>
 
 </Project>
