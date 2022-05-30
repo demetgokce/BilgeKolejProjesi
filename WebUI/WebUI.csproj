@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Compile Include="Areas\Yonetim\Controllers\DersController.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\HomeController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\OgrenciController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\SinifController.cs" />
   </ItemGroup>
@@ -35,7 +36,12 @@
 
   <ItemGroup>
     <None Include="Areas\Yonetim\Views\Ders\Index.cshtml" />
+    <None Include="Areas\Yonetim\Views\Home\Index.cshtml" />
     <None Include="Areas\Yonetim\Views\Ogrenci\Index.cshtml" />
+    <None Include="Areas\Yonetim\Views\Shared\_Footer.cshtml" />
+    <None Include="Areas\Yonetim\Views\Shared\_Layout.cshtml" />
+    <None Include="Areas\Yonetim\Views\Shared\_NavBar.cshtml" />
+    <None Include="Areas\Yonetim\Views\Shared\_SideBar.cshtml" />
     <None Include="wwwroot\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <None Include="wwwroot\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
     <None Include="wwwroot\plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
