@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bilge.Domain
 {
-   public class OgrenciDonemNot:BaseEntity
+   public class OgrenciDonemDers:BaseEntity
     {
 
        

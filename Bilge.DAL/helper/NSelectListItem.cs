@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bilge.Domain.HelperModels
 {
-  public  class SelectListItem
+  public  class NSelectListItem
     {
 
         public string Text { get; set; }

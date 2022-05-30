@@ -89,20 +89,20 @@ namespace WebUI.Controllers
 
         #region Ders Düzenle
 
-       // public ActionResult DersDuzenle(int id)
-        //{
+        public ActionResult DersDuzenle(int id)
+       {
 
-        //    var ders = _repository.Getir(id);
-        //    if (ders.BasariliMi)
-        //    {
-        //        var siniflar = SelectListHelper.GetirSinifCustom(ders.Veri.DersAd.sinifId);
-        //        ViewBag.Siniflar = siniflar;
+          var ders = _repository.Getir(id);
+            if (ders.BasariliMi)
+           {
+                var siniflar = SelectListHelper.GetirSinifCustom(ders.Veri.DersAd.SinifId);
+                ViewBag.Siniflar = siniflar;
 
-        //        return View(ders.Veri);
-        //    }
+               return View(ders.Veri);
+            }
 
-        //    return RedirectToAction("DersListesi");
-        //}
+            return RedirectToAction("DersListesi");
+        }
 
         [HttpPost]
         public ActionResult DersDuzenle(Ders kayit)

@@ -143,7 +143,25 @@ namespace Bilge.DAL.EfCore
             }
         }
 
-       
+
+        public IslemSonuc<SelectListHelper> GetirTumu_SelectListHelper()
+        {
+            var siniflar = (from f in _veritabani.Siniflar
+                            orderby f.SinifAdi
+                            select new NSelectListItem
+                            {
+                                Text = f.SinifAdi,
+                                Value = f.Id.ToString()
+                            }).ToList();
+
+            return new IslemSonuc<SelectListHelper>
+            {
+                BasariliMi = true,
+                Veri = new SelectListHelper(siniflar, "Value", "Text")
+            };
+        }
+
+
 
     }
 }

@@ -38,6 +38,6 @@ namespace Bilge.Domain
         public string Gsm { get; set; }
         public virtual ICollection<Yoklama> Yoklamas { get; set; }
         public virtual ICollection<DersProgram> DersProgram { get; set; }
-        public virtual ICollection<OgrenciDonemNot> OgrenciDonemNot { get; set; }
+        public virtual ICollection<OgrenciDonemDers> OgrenciDonemDers { get; set; }
     }
 }

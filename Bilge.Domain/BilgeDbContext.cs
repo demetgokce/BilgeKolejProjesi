@@ -10,73 +10,40 @@ using System.Threading.Tasks;
 
 namespace Bilge.Domain
 {
- public  class BilgeDbContext: DbContext
+    public class BilgeDbContext : DbContext
     {
         public DbSet<Donem> Donem { get; set; }
-        public DbSet<Ders> Ders{ get; set; }
+        public DbSet<Ders> Ders { get; set; }
         public DbSet<Veli> Veliler { get; set; }
         public DbSet<Ogrenci> Ogrenciler { get; set; }
         public DbSet<Ogretmen> Ogretmenler { get; set; }
         public DbSet<DersProgram> DersProgramlar { get; set; }
         public DbSet<Sinif> Siniflar { get; set; }
         public DbSet<DonemDers> DonemDers { get; set; }
-        public DbSet<OgrenciDonemNot> OgrenciDonemNotlar { get; set; }
+        public DbSet<OgrenciDonemDers> OgrenciDonemDers { get; set; }
         public DbSet<Yoklama> Yoklamalar { get; set; }
+        public object Ogretmen { get; set; }
 
-   
         public BilgeDbContext()
-        { 
-        
+        {
+
         }
 
         public BilgeDbContext(DbContextOptions<BilgeDbContext> options) : base(options)
         {
 
-
-
         }
-
-
-
-             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-                 optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-7I7PU0G;Initial Catalog=BilgeKolej;Integrated //Security=True;Connect //Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
-          
-             }
-
-
-        public class IdentityContext : IdentityDbContext<ApplicationUser>
-        {
-            
-
-            protected override void OnModelCreating(ModelBuilder modelBuilder)
-            {
-                base.OnModelCreating(modelBuilder);
-            }
+            //optionsBuilder.UseSqlServer(@"Server=.;Database=OkulDb5142;User Id=sa;password=123");
+            optionsBuilder.UseNpgsql(@"Server=127.0.0.1;Port=5432;Database=BilgeDb;User Id=postgres;Password=123;");
         }
-        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        // {
-
-        //    optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-7I7PU0G;Initial Catalog=BilgeKolej;Integrated //Security=True;Connect //Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        // }
-
-
-
-
-
-
-    }
-
-    public class IdentityContext : IdentityDbContext<ApplicationUser>
-    {
-  
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
 
-            base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -59,7 +59,7 @@ namespace Bilge.Domain
         public virtual Ders Ders { get; set; }
         public virtual ICollection<DersProgram> DersPrograms { get; set; }
         public virtual ICollection<Yoklama> Yoklamas { get; set; }
-        public virtual ICollection<OgrenciDonemNot> OgrenciDonemNot { get; set; }
+        public virtual ICollection<OgrenciDonemDers> OgrenciDonemDers{ get; set; }
         public virtual ICollection<DonemDers> DonemDers { get; set; }
     }
 }

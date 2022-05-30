@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bilge.DAL.EfCore
 {
-  public  class OgrenciDonemNotRepository: BaseRepository
+  public  class OgrenciDonemDersRepository: BaseRepository
     {
 
         public IslemSonuc<Ders> GetirDers(int id, int ogretmenId = 0)
@@ -26,11 +26,11 @@ namespace Bilge.DAL.EfCore
             }
             catch { return new IslemSonuc<Ders>(); }
         }
-        public IslemSonuc Ekle(OgrenciDonemNot ders)
+        public IslemSonuc Ekle(OgrenciDonemDers ders)
         {
             try
             {
-                _veritabani.OgrenciDonemNotlar.Add(ders);
+                _veritabani.OgrenciDonemDers.Add(ders);
                 _veritabani.SaveChanges();
                 return new IslemSonuc { BasariliMi = true };
             }
@@ -43,8 +43,8 @@ namespace Bilge.DAL.EfCore
         {
             try
             {
-                var ders = _veritabani.OgrenciDonemNotlar.Where(d => d.Id == id).FirstOrDefault();
-                _veritabani.OgrenciDonemNotlar.Remove(ders);
+                var ders = _veritabani.OgrenciDonemDers.Where(d => d.Id == id).FirstOrDefault();
+                _veritabani.OgrenciDonemDers.Remove(ders);
                 _veritabani.SaveChanges();
                 return new IslemSonuc { BasariliMi = true };
             }
@@ -57,7 +57,7 @@ namespace Bilge.DAL.EfCore
         {
             try
             {
-                var ogrenciler = (from o in _veritabani.OgrenciDonemNotlar
+                var ogrenciler = (from o in _veritabani.OgrenciDonemDers
                                   where o.Id == kayit.Id
                                   select o);
                 if (ogrenciler.Count() > 0)
@@ -90,7 +90,7 @@ namespace Bilge.DAL.EfCore
                     int sonDonem = sonDonemler.FirstOrDefault().Id;
 
                     var dersler = (from dd in _veritabani.DonemDers.ToList()
-                                   join odd in _veritabani.OgrenciDonemNotlar.Where(o => o.OgrenciId == ogrenciId).ToList() on dd.Id equals odd.DonemDersId into d
+                                   join odd in _veritabani.OgrenciDonemDers.Where(o => o.OgrenciId == ogrenciId).ToList() on dd.Id equals odd.DonemDersId into d
                                    from ders in d.DefaultIfEmpty()
                                    where dd.DonemId == sonDonem && dd.Ders.SinifId == sinifId && ders == null
                                    orderby dd.Ders.DersAd
@@ -123,7 +123,7 @@ namespace Bilge.DAL.EfCore
                 {
                     int sonDonem = sonDonemler.FirstOrDefault().Id;
 
-                    var dersler = (from dd in _veritabani.OgrenciDonemNotlar
+                    var dersler = (from dd in _veritabani.OgrenciDonemDers
                                    where dd.DonemDers.DonemId == sonDonem && dd.OgrenciId == ogrenciId
                                    orderby dd.DonemDers.Ders.DersAd
                                    select new NDers
@@ -149,7 +149,7 @@ namespace Bilge.DAL.EfCore
         {
             try
             {
-                var dersler = (from dd in _veritabani.OgrenciDonemNotlar
+                var dersler = (from dd in _veritabani.OgrenciDonemDers
                                where dd.OgrenciId == ogrenciId
                                orderby new { dd.DonemDers.Donem.Yil, dd.DonemDers.Donem.DonemTip } descending
                                select new NDersNotlu
@@ -179,7 +179,7 @@ namespace Bilge.DAL.EfCore
         {
             try
             {
-                var dersler = (from dd in _veritabani.OgrenciDonemNotlar
+                var dersler = (from dd in _veritabani.OgrenciDonemDers
                                where dd.OgrenciId == ogrenciId
                                orderby new { dd.DonemDers.Donem.Yil, dd.DonemDers.Donem.DonemTip } descending
                                select new NDersDonem

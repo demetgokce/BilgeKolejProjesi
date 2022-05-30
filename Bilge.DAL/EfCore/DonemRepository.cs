@@ -128,7 +128,27 @@ namespace Bilge.DAL.EfCore
             }
         }
 
-        
+        public IslemSonuc<SelectListHelper> GetirTumu_SelectList()
+        {
+            var donemler = (from d in _veritabani.Donem
+                            orderby d.Yil
+                            select d).ToList();
+
+            List<NSelectListItem> donemListesi = new List<NSelectListItem>();
+            foreach (var donem in donemler)
+            {
+                donemListesi.Add(new NSelectListItem
+                {
+                    Text = donem.Yil + " " + EnumHelper.GetirDonemAdi(donem.DonemTip) + " Dönemi",
+                    Value = donem.Id.ToString()
+                });
+            }
+
+            return new IslemSonuc<SelectListHelper>
+            {
+             
+            };
+        }
 
     }
 }
