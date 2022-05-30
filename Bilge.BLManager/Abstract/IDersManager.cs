@@ -11,6 +11,6 @@ namespace Okul.BLManager.Abstract
     public interface IDersManager:IManager<Ders>
     {
 
-        public bool CheckForBransName(string DersAdi);
+        public bool CheckForDersAd(string DersAdi);
     }
 }

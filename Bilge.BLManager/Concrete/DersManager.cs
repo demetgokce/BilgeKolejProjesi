@@ -11,7 +11,7 @@ namespace Okul.BLManager.Concrete
 {
     public class DersManager : ManagerBase<Ders>, IDersManager
     {
-        public bool CheckForBransName(string DersAdi)
+        public bool CheckForDersAd(string DersAdi)
         {
             var entities = base.db.GetAll(x => x.DersAd == DersAdi);
             if (entities.Count > 0)
