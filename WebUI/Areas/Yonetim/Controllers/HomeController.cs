@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebUI.Areas.Yonetim.Controllers
 {
+    [Area("Yonetim")]
     public class HomeController : Controller
     {
         public IActionResult Index()

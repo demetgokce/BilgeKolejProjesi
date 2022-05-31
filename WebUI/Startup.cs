@@ -7,7 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using Okul.BLManager.Abstract;
+using Okul.BLManager.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,13 +32,21 @@ namespace WebUI
             services.AddDbContext<BilgeDbContext>((options => options.UseNpgsql(@"Server=127.0.0.1;Port=5432;Database=BilgeDb;User Id=postgres;Password=123;")));
             
 
-            services.AddScoped<DersRepository>();
-            services.AddScoped<OgretmenRepository>();
-            services.AddScoped<OgrenciRepository>();
-            services.AddScoped<SinifRepository>();
-            services.AddScoped<VeliRepository>();
-            services.AddScoped<DonemRepository>();
-            services.AddScoped<YoklamaRepository>();
+           // DAL Katmanindaki Servislerin Register Edilmesi
+            //services.AddScoped<IBransRepository,BransRepository>();
+           // services.AddScoped<IKullanicilarRepository, KullanicilarRepsitory>();
+           // services.AddScoped<IOgrencilerRepository, OgrencilerRepository>();
+           // services.AddScoped<IOgretmenlerRepository, OgretmenlerRepository>();
+           // services.AddScoped<IPlanRepository, PlanRepository>();
+           // services.AddScoped<ISinifRepository, SinifRepository>();
+           // services.AddScoped<IYoklamaRepository, YoklamaRepository>();
+            
+
+            //Manager siniflarinin register edilmesi 
+            services.AddScoped<IDersManager, DersManager>();
+            services.AddScoped<IKullaniciManager, KullaniciManager>();
+            services.AddScoped<IOgrenciManager, OgrenciManager>();
+            services.AddScoped<ISinifManager, SinifManager>();
 
 
             #region Cookie Base Authentication Ayarlari
