@@ -1,5 +1,7 @@
-﻿using Bilge.Domain;
+﻿using Bilge.DAL.Abstract;
+using Bilge.Domain;
 using Bilge.Domain.HelperModels;
+using Okul.DAL.EfCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Bilge.DAL.EfCore
 {
-   public class SinifRepository:BaseRepository
+   public class SinifRepository : OkulDbRepository<Sinif>, ISinifRepository
     {
 
         //public IslemSonuc<List<Sinif>> GetirTumu()

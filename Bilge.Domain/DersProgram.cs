@@ -16,7 +16,7 @@ namespace Bilge.Domain
 
 
         public int DersId { get; set; }
-        public  Ders Ders{ get; set; }
+        public  Sinif Ders{ get; set; }
 
 
         public int OgretmenId { get; set; }

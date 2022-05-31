@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bilge.Domain
 {
-  public  class Sinif:BaseEntity
+    public class Sinif : BaseEntity
     {
        
 
@@ -23,7 +23,7 @@ namespace Bilge.Domain
         public int Kapasite { get; set; }
 
         public virtual ICollection<Ogrenci> Ogrenciler { get; set; }
-        public virtual ICollection<Ders> Dersler { get; set; }
+        public virtual ICollection<Sinif> Dersler { get; set; }
 
         public virtual ICollection<DersProgram> DersPrograms { get; set; }
 

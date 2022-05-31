@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bilge.Domain
 {
-   public class Ders:BaseEntity
+   public class Sinif:BaseEntity
     {
 
         
@@ -22,10 +22,9 @@ namespace Bilge.Domain
         [MaxLength(3, ErrorMessage = "Ders kodu 3 karakterden oluşmalıdır.")]
         public string Kod { get; set; }
 
-        [Required]
-        public int SinifId { get; set; }
+      
 
-        public virtual Sinif Sinif { get; set; }
+       
 
 
         public virtual ICollection<DonemDers> DonemDersler { get; set; }

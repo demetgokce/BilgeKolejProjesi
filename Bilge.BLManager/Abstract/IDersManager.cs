@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Okul.BLManager.Abstract
 {
-    public interface IDersManager:IManager<Ders>
+    public interface IDersManager:IManager<Sinif>
     {
 
         public bool CheckForDersAd(string DersAdi);

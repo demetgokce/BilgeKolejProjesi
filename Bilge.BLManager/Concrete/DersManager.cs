@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Okul.BLManager.Concrete
 {
-    public class DersManager : ManagerBase<Ders>, IDersManager
+    public class DersManager : ManagerBase<Sinif>, IDersManager
     {
         public bool CheckForDersAd(string DersAdi)
         {

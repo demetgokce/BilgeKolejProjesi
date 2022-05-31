@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bilge.DAL.Abstract
 {
-   public interface IOgrenciDonemNotRepository:IDbRepository<Ogrenci>
+ public   interface IDonemDersRepository:IDbRepository<DonemDers>
     {
     }
 }

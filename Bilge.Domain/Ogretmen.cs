@@ -52,7 +52,7 @@ namespace Bilge.Domain
         [Required]
         public int DersId { get; set; }
 
-        public virtual Ders Ders { get; set; }
+        public virtual Sinif Ders { get; set; }
         public virtual ICollection<DonemDers> DonemDersler { get; set; }
         public virtual ICollection<DersProgram> DersProgram { get; set; }
         public int SinifId { get; set; }
