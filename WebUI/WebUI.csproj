@@ -12,6 +12,90 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\dist\css\adminlte.css.map" />
+    <Content Remove="wwwroot\dist\css\adminlte.min.css.map" />
+    <Content Remove="wwwroot\dist\css\alt\adminlte.components.css.map" />
+    <Content Remove="wwwroot\dist\css\alt\adminlte.components.min.css.map" />
+    <Content Remove="wwwroot\dist\css\alt\adminlte.core.css.map" />
+    <Content Remove="wwwroot\dist\css\alt\adminlte.core.min.css.map" />
+    <Content Remove="wwwroot\dist\css\alt\adminlte.extra-components.css.map" />
+    <Content Remove="wwwroot\dist\css\alt\adminlte.extra-components.min.css.map" />
+    <Content Remove="wwwroot\dist\css\alt\adminlte.light.css.map" />
+    <Content Remove="wwwroot\dist\css\alt\adminlte.light.min.css.map" />
+    <Content Remove="wwwroot\dist\css\alt\adminlte.pages.css.map" />
+    <Content Remove="wwwroot\dist\css\alt\adminlte.pages.min.css.map" />
+    <Content Remove="wwwroot\dist\css\alt\adminlte.plugins.css.map" />
+    <Content Remove="wwwroot\dist\css\alt\adminlte.plugins.min.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap-grid.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap-grid.min.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap-grid.rtl.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap-reboot.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap-reboot.rtl.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap-utilities.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap-utilities.min.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap-utilities.rtl.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap.min.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap.rtl.css.map" />
+    <Content Remove="wwwroot\dist\css\bootstrap.rtl.min.css.map" />
+    <Content Remove="wwwroot\dist\js\adminlte.js" />
+    <Content Remove="wwwroot\dist\js\adminlte.js.map" />
+    <Content Remove="wwwroot\dist\js\adminlte.min.js" />
+    <Content Remove="wwwroot\dist\js\adminlte.min.js.map" />
+    <Content Remove="wwwroot\dist\js\bootstrap.bundle.js" />
+    <Content Remove="wwwroot\dist\js\bootstrap.bundle.js.map" />
+    <Content Remove="wwwroot\dist\js\bootstrap.bundle.min.js" />
+    <Content Remove="wwwroot\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Remove="wwwroot\dist\js\bootstrap.esm.js" />
+    <Content Remove="wwwroot\dist\js\bootstrap.esm.js.map" />
+    <Content Remove="wwwroot\dist\js\bootstrap.esm.min.js" />
+    <Content Remove="wwwroot\dist\js\bootstrap.esm.min.js.map" />
+    <Content Remove="wwwroot\dist\js\bootstrap.js" />
+    <Content Remove="wwwroot\dist\js\bootstrap.js.map" />
+    <Content Remove="wwwroot\dist\js\bootstrap.min.js" />
+    <Content Remove="wwwroot\dist\js\bootstrap.min.js.map" />
+    <Content Remove="wwwroot\dist\js\demo.js" />
+    <Content Remove="wwwroot\dist\js\pages\dashboard.js" />
+    <Content Remove="wwwroot\dist\js\pages\dashboard2.js" />
+    <Content Remove="wwwroot\dist\js\pages\dashboard3.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\adminlte.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\adminlte.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\adminlte.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\adminlte.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.components.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.components.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.components.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.components.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.core.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.core.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.core.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.core.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.extra-components.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.extra-components.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.extra-components.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.extra-components.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.light.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.light.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.light.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.light.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.pages.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.pages.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.pages.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.pages.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.plugins.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.plugins.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.plugins.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\dist\css\alt\adminlte.plugins.min.css.map" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="Areas\Yonetim\Controllers\DersController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\HomeController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\OgrenciController.cs" />
@@ -42,6 +126,58 @@
     <None Include="Areas\Yonetim\Views\Shared\_Layout.cshtml" />
     <None Include="Areas\Yonetim\Views\Shared\_NavBar.cshtml" />
     <None Include="Areas\Yonetim\Views\Shared\_SideBar.cshtml" />
+    <None Include="Areas\Yonetim\_ViewImports.cshtml" />
+    <None Include="Areas\Yonetim\_ViewStart.cshtml" />
+    <None Include="wwwroot\dist\css\adminlte.css.map" />
+    <None Include="wwwroot\dist\css\adminlte.min.css.map" />
+    <None Include="wwwroot\dist\css\alt\adminlte.components.css.map" />
+    <None Include="wwwroot\dist\css\alt\adminlte.components.min.css.map" />
+    <None Include="wwwroot\dist\css\alt\adminlte.core.css.map" />
+    <None Include="wwwroot\dist\css\alt\adminlte.core.min.css.map" />
+    <None Include="wwwroot\dist\css\alt\adminlte.extra-components.css.map" />
+    <None Include="wwwroot\dist\css\alt\adminlte.extra-components.min.css.map" />
+    <None Include="wwwroot\dist\css\alt\adminlte.light.css.map" />
+    <None Include="wwwroot\dist\css\alt\adminlte.light.min.css.map" />
+    <None Include="wwwroot\dist\css\alt\adminlte.pages.css.map" />
+    <None Include="wwwroot\dist\css\alt\adminlte.pages.min.css.map" />
+    <None Include="wwwroot\dist\css\alt\adminlte.plugins.css.map" />
+    <None Include="wwwroot\dist\css\alt\adminlte.plugins.min.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap-utilities.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap.rtl.css.map" />
+    <None Include="wwwroot\dist\css\bootstrap.rtl.min.css.map" />
+    <None Include="wwwroot\dist\js\adminlte.js" />
+    <None Include="wwwroot\dist\js\adminlte.js.map" />
+    <None Include="wwwroot\dist\js\adminlte.min.js" />
+    <None Include="wwwroot\dist\js\adminlte.min.js.map" />
+    <None Include="wwwroot\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\dist\js\bootstrap.esm.js" />
+    <None Include="wwwroot\dist\js\bootstrap.esm.js.map" />
+    <None Include="wwwroot\dist\js\bootstrap.esm.min.js" />
+    <None Include="wwwroot\dist\js\bootstrap.esm.min.js.map" />
+    <None Include="wwwroot\dist\js\bootstrap.js" />
+    <None Include="wwwroot\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\dist\js\demo.js" />
+    <None Include="wwwroot\dist\js\pages\dashboard.js" />
+    <None Include="wwwroot\dist\js\pages\dashboard2.js" />
+    <None Include="wwwroot\dist\js\pages\dashboard3.js" />
     <None Include="wwwroot\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <None Include="wwwroot\plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
     <None Include="wwwroot\plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
@@ -1618,6 +1754,209 @@
     <None Include="wwwroot\plugins\uplot\uPlot.esm.js" />
     <None Include="wwwroot\plugins\uplot\uPlot.iife.js" />
     <None Include="wwwroot\plugins\uplot\uPlot.iife.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\dist\css\bootstrap-grid.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap-grid.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap-grid.rtl.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap-grid.rtl.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap-reboot.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap-reboot.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap-reboot.rtl.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap-reboot.rtl.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap-utilities.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap-utilities.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap-utilities.rtl.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap-utilities.rtl.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap.rtl.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\css\bootstrap.rtl.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\AdminLTELogo.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\avatar.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\avatar2.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\avatar3.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\avatar4.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\avatar5.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\boxed-bg.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\boxed-bg.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\credit\american-express.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\credit\cirrus.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\credit\mastercard.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\credit\paypal.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\credit\paypal2.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\credit\visa.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\default-150x150.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\icons.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\photo1.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\photo2.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\photo3.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\photo4.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\prod-1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\prod-2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\prod-3.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\prod-4.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\prod-5.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\user1-128x128.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\user2-160x160.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\user3-128x128.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\user4-128x128.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\user5-128x128.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\user6-128x128.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\user7-128x128.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\img\user8-128x128.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\dist\js\.eslintrc.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
