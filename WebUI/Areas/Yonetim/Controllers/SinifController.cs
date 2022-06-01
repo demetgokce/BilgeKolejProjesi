@@ -34,6 +34,10 @@ namespace WebUI.Areas.Yonetim.Controllers
                 siniflar.Add(new Siniflar());
 
             return View(siniflar);
+
+
+
+
         }
     }
 }

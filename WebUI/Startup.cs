@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Okul.BLManager.Abstract;
 using Okul.BLManager.Concrete;
+using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,19 +29,21 @@ namespace WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddAutoMapper(typeof(Startup));
+
             services.AddDbContext<BilgeDbContext>((options => options.UseNpgsql(@"Server=127.0.0.1;Port=5432;Database=BilgeDb;User Id=postgres;Password=123;")));
+           
             
 
-           // DAL Katmanindaki Servislerin Register Edilmesi
+            // DAL Katmanindaki Servislerin Register Edilmesi
             //services.AddScoped<IBransRepository,BransRepository>();
-           // services.AddScoped<IKullanicilarRepository, KullanicilarRepsitory>();
-           // services.AddScoped<IOgrencilerRepository, OgrencilerRepository>();
-           // services.AddScoped<IOgretmenlerRepository, OgretmenlerRepository>();
-           // services.AddScoped<IPlanRepository, PlanRepository>();
-           // services.AddScoped<ISinifRepository, SinifRepository>();
-           // services.AddScoped<IYoklamaRepository, YoklamaRepository>();
-            
+            // services.AddScoped<IKullanicilarRepository, KullanicilarRepsitory>();
+            // services.AddScoped<IOgrencilerRepository, OgrencilerRepository>();
+            // services.AddScoped<IOgretmenlerRepository, OgretmenlerRepository>();
+            // services.AddScoped<IPlanRepository, PlanRepository>();
+            // services.AddScoped<ISinifRepository, SinifRepository>();
+            // services.AddScoped<IYoklamaRepository, YoklamaRepository>();
+
 
             //Manager siniflarinin register edilmesi 
             services.AddScoped<IDersManager, DersManager>();

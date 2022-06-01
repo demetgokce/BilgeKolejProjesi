@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -100,6 +100,10 @@
     <Compile Include="Areas\Yonetim\Controllers\HomeController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\OgrenciController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\SinifController.cs" />
+    <Compile Include="Areas\Yonetim\Models\AutoMapperProfile.cs" />
+    <Compile Include="Areas\Yonetim\Models\Dto\OgrenciCreateDto.cs" />
+    <Compile Include="Areas\Yonetim\Models\Dto\OgrenciDto.cs" />
+    <Compile Include="Areas\Yonetim\Models\SinifModel.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -114,7 +118,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Yonetim\Data\" />
-    <Folder Include="Areas\Yonetim\Models\" />
   </ItemGroup>
 
   <ItemGroup>

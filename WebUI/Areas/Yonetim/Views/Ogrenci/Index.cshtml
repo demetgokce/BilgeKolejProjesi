@@ -1,133 +1,46 @@
-﻿@model Bilge.Domain.Ogrenci
-@{
-    Layout = "../Shared/_Layout.cshtml";
-    ViewBag.Title = "Öğrenci Ekle";
-}
-<h2>Öğrenci Ekle</h2>
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $.fakulteId = $("#FakulteId").val();
-        GetirBolumler($.fakulteId);
-        $("#FakulteId").change(function () {
-            $.fakulteId = $(this).val();
-            GetirBolumler();
-        });
-    });
-    function GetirBolumler(fakulteId) {
-        $("#BolumId").empty();
-        $.ajax({
-            type: "POST",
-            url: '@Url.Action("SinifDersleriJson","Sinif")',
-            data: { id: $.sinifId },
-            dataType: "json",
-            success: function (siniflar) {
-                $.each(bolumler, function (index, sinif) {
-                    $("#SinifId").append("<option value=" + sinif.Id + ">" + sinif.ad + "</option>");
-                });
-            }
-        });
-    }
-</script>
+﻿
+@model IEnumerable<Ogrenci>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+<p>
+    <a class="btn btn-success" asp-controller="Ogrenci" asp-action="Create">Yeni</a>
+</p>
 
-    <div class="form-horizontal">
-        <h4>Öğrenci Bilgisi</h4>
-        <hr />
-        @Html.ValidationSummary(true)
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td> @Html.DisplayNameFor(model => model.Id)</td>
+            <td> @Html.DisplayNameFor(model => model.Adi)</td>
+            <td> @Html.DisplayNameFor(model => model.Soyadi)</td>
+            <td> @Html.DisplayNameFor(model => model.TcNo)</td>
+            <td> @Html.DisplayNameFor(model => model.Gsm)</td>
+            <td> @Html.DisplayNameFor(model => model.EPosta)</td>
+            <td> @Html.DisplayNameFor(model => model.DogumTarih)</td>
+            <td> @Html.DisplayNameFor(model => model.GirisTarih)</td>
+            <td> @Html.DisplayNameFor(model => model.CikisTarih)</td>
+            <td>İşlem</td>
+        </tr>
+    </thead>
+    <tbody>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Adi, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Adi)
-                @Html.ValidationMessageFor(model => model.Adi)
-            </div>
-        </div>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Adi</td>
+            <td>@item.Soyadi</td>
+            <td>@item.TcNo</td>
+            <td>@item.Gsm</td>
+            <td>@item.EPosta</td>
+            <td>@item.DogumTarih</td>
+            <td>@item.GirisTarih</td>
+            <td>@item.CikisTarih</td>
+            <td>
+                <a asp-controller="Ogrenci" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
+                <a asp-controller="Ogrenci" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+        }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Soyadi, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Soyadi)
-                @Html.ValidationMessageFor(model => model.Soyadi)
-            </div>
-        </div>
+    </tbody>
+</table>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.TcNo, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TcNo)
-                @Html.ValidationMessageFor(model => model.TcNo)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EPosta, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EPosta)
-                @Html.ValidationMessageFor(model => model.EPosta)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DogumTarih, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DogumTarih)
-                @Html.ValidationMessageFor(model => model.DogumTarih)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.GirisTarih, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.GirisTarih)
-                @Html.ValidationMessageFor(model => model.GirisTarih)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CikisTarih, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CikisTarih)
-                @Html.ValidationMessageFor(model => model.CikisTarih)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Fakülte</label>
-            <div class="col-md-10">
-                <select id="FakulteId">
-                    @foreach (SelectListItem fakulte in (IEnumerable<SelectListItem>)ViewBag.Fakulteler)
-                    {
-                        <option value="@fakulte.Value">@fakulte.Text</option>
-                    }
-                </select>
-                @Html.ValidationMessageFor(model => model.SinifId)
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DersId, "DersId", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <select id="BolumId" name="BolumId"></select>
-                @Html.ValidationMessageFor(model => model.DersId)
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Kaydet" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Öğrenci Listesine Dön", "OgrenciListesi")
-</div>
-
-@section Scripts {
-
-}
