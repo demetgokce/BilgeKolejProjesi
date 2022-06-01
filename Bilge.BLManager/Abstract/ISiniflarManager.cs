@@ -8,7 +8,12 @@ using System.Threading.Tasks;
 
 namespace Okul.BLManager.Abstract
 {
-   public interface ISinifManager:IManager<Sinif>
+   public interface ISiniflarManager:IManager<Siniflar>
     {
+
+      
+        public bool CheckForSinifAdi(string SinifAdi);
+
+
     }
 }

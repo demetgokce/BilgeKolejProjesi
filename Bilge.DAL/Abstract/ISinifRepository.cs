@@ -7,7 +7,12 @@ using System.Threading.Tasks;
 
 namespace Bilge.DAL.Abstract
 {
-   public interface ISinifRepository: IDbRepository<Sinif>
+   public interface ISinifRepository: IDbRepository<Siniflar>
     {
+        List<Siniflar> ListAllSiniflar();
+      
+
+
+
     }
 }

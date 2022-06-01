@@ -10,9 +10,48 @@ using System.Threading.Tasks;
 
 namespace Bilge.DAL.EfCore
 {
-   public  class DersRepository : OkulDbRepository<Sinif>, IDersRepository
+   public  class DersRepository : OkulDbRepository<Ders>, IDersRepository
     {
-       // public DersRepository() : base() { }
+
+        BilgeDbContext c = new BilgeDbContext();
+
+        public void AddDers(Ders ders)
+        {
+            c.Add(ders);
+            c.SaveChanges();
+
+        }
+
+
+        public void DeleteDers(Ders ders)
+        {
+
+            c.Remove(ders);
+            c.SaveChanges();
+
+        }
+
+
+
+        public List<Ders> ListAllDers()
+        {
+
+            return c.Ders.ToList();
+
+
+        }
+
+        public void UpdateDers(Ders ders)
+        {
+
+            c.Update(ders);
+            c.SaveChanges();
+
+
+        }
+
+
+        // public DersRepository() : base() { }
         //public IslemSonuc<List<Ders>> GetirTumu()
         //{
         //    try
@@ -145,7 +184,7 @@ namespace Bilge.DAL.EfCore
         //    }
         //}
 
-     
+
 
 
 

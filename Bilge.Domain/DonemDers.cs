@@ -24,7 +24,7 @@ namespace Bilge.Domain
         public int OgretmenId { get; set; }
 
         public virtual Donem Donem { get; set; }
-        public virtual Sinif Ders { get; set; }
+        public virtual Ders Ders { get; set; }
         public virtual Ogretmen Ogretmen { get; set; }
         public virtual ICollection<OgrenciDonemDers> OgrenciDonemDers { get; set; }
 

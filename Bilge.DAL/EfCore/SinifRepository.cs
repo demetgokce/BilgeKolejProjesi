@@ -10,34 +10,46 @@ using System.Threading.Tasks;
 
 namespace Bilge.DAL.EfCore
 {
-   public class SinifRepository : OkulDbRepository<Sinif>, ISinifRepository
+    public class SinifRepository : OkulDbRepository<Siniflar>, ISinifRepository
     {
 
-        //public IslemSonuc<List<Sinif>> GetirTumu()
-        //{
-        //    try
-        //    {
-        //        return new IslemSonuc<List<Sinif>>
-        //        {
-        //            BasariliMi = true,
-        //            Veri = _veritabani.Siniflar.ToList()
-        //        };
-        //    }
-        //    catch (Exception hata) { return new IslemSonuc<List<Sinif>> { Mesaj = hata.Message }; }
+        BilgeDbContext c = new BilgeDbContext();
 
-        //}
-        //public IslemSonuc<List<Sinif>> GetirSinifDersleri(int sinifId)
-        //{
-        //    try
-        //    {
-        //        return new IslemSonuc<List<Sinif>>
-        //        {
-        //            BasariliMi = true,
-        //            Veri = _veritabani.Siniflar.Where(b => b.Id == sinifId).ToList()
-        //        };
-        //    }
-        //    catch (Exception hata) { return new IslemSonuc<List<Sinif>> { Mesaj = hata.Message }; }
-        //}
+       public void AddSiniflar(Siniflar siniflar)
+        {
+            c.Add(siniflar);
+           c.SaveChanges();
+            
+        }
+
+
+        public void DeleteSiniflar(Siniflar siniflar)
+        {
+
+            c.Remove(siniflar);
+            c.SaveChanges();
+
+        }
+     
+
+
+        public List<Siniflar> ListAllSiniflar()
+        {
+
+            return c.Siniflar.ToList();
+
+
+        }
+
+     public void UpdateSiniflar(Siniflar siniflar)
+        {
+
+            c.Update(siniflar);
+            c.SaveChanges();
+
+
+        }
+
         //public IslemSonuc<Sinif> Getir(int id)
         //{
         //    try
@@ -90,7 +102,7 @@ namespace Bilge.DAL.EfCore
         //        {
         //            var duzenlenecekKayit = duzenlenecekKayitlar.FirstOrDefault();
         //            duzenlenecekKayit.SinifAdi = kayit.SinifAdi;
-                    
+
         //            duzenlenecekKayit.Kapasite = kayit.Kapasite;
         //            duzenlenecekKayit.Kod = kayit.Kod;
         //            _veritabani.SaveChanges();
@@ -162,8 +174,6 @@ namespace Bilge.DAL.EfCore
         //       // Veri = new SelectListHelper(siniflar, "Value", "Text")
         //    };
         //}
-
-
-
+      
     }
 }

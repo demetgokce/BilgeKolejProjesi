@@ -12,11 +12,11 @@ namespace Bilge.Domain
         public DateTime Saat { get; set; }
 
         public int SinifId { get; set; }
-        public Sinif Sinif { get; set; }
+        public Siniflar Siniflar { get; set; }
 
 
         public int DersId { get; set; }
-        public  Sinif Ders{ get; set; }
+        public  Ders Ders{ get; set; }
 
 
         public int OgretmenId { get; set; }

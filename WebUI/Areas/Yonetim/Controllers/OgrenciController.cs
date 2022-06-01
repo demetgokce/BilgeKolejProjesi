@@ -14,11 +14,11 @@ namespace WebUI.Areas.Yonetim.Controllers
     public class OgrenciController : Controller
     {
         private readonly IOgrenciManager manager;
-        private readonly ISinifManager sinifManager;
+        private readonly ISiniflarManager sinifManager;
 
 
         public OgrenciController(IOgrenciManager manager,
-           ISinifManager sinifManager
+           ISiniflarManager sinifManager
            )
         {
             this.manager = manager;

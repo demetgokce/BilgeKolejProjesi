@@ -49,12 +49,14 @@ namespace Bilge.Domain
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime CikisTarih { get; set; }
 
-        [Required]
-        public int DersId { get; set; }
 
-        public virtual Sinif Ders { get; set; }
         public virtual ICollection<DonemDers> DonemDersler { get; set; }
         public virtual ICollection<DersProgram> DersProgram { get; set; }
-        public int SinifId { get; set; }
+        public int DersId { get; set; }
+        public virtual Ders Ders{ get; set; }
+        
+        
+
+     
     }
 }

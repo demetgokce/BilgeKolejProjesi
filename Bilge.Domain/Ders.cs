@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bilge.Domain
 {
-   public class Sinif:BaseEntity
+   public class Ders:BaseEntity
     {
 
         

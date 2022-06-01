@@ -36,7 +36,7 @@ namespace Bilge.Domain
         [DataType(DataType.PhoneNumber)]
         [Display(Name = " Telefon Numarasi")]
         public string Gsm { get; set; }
-        public virtual ICollection<Yoklama> Yoklamas { get; set; }
+        public virtual ICollection<Yoklama> Yoklama { get; set; }
         public virtual ICollection<DersProgram> DersProgram { get; set; }
         public virtual ICollection<OgrenciDonemDers> OgrenciDonemDers { get; set; }
     }

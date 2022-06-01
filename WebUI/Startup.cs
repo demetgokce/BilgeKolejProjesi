@@ -46,7 +46,7 @@ namespace WebUI
             services.AddScoped<IDersManager, DersManager>();
             services.AddScoped<IKullaniciManager, KullaniciManager>();
             services.AddScoped<IOgrenciManager, OgrenciManager>();
-            services.AddScoped<ISinifManager, SinifManager>();
+            services.AddScoped<ISiniflarManager, SiniflarManager>();
 
 
             #region Cookie Base Authentication Ayarlari

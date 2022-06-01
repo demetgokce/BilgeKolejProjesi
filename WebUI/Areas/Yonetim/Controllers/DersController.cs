@@ -40,12 +40,12 @@ namespace WebUI.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            Sinif entity = new Sinif();
+            Ders entity = new Ders();
             return View(entity);
         }
 
         [HttpPost]
-        public IActionResult Create(Sinif ders)
+        public IActionResult Create(Ders ders)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +71,7 @@ namespace WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(Sinif ders)
+        public IActionResult Update(Ders ders)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace WebUI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(Sinif ders)
+        public IActionResult Delete(Ders ders)
         {
             manager.Delete(ders);
             return RedirectToAction("Index", "Ders");

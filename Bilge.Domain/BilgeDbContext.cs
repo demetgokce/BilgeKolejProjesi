@@ -13,16 +13,16 @@ namespace Bilge.Domain
     public class BilgeDbContext : DbContext
     {
         public DbSet<Donem> Donem { get; set; }
-        public DbSet<Sinif> Ders { get; set; }
+        public DbSet<Ders> Ders { get; set; }
         public DbSet<Veli> Veliler { get; set; }
         public DbSet<Ogrenci> Ogrenciler { get; set; }
         public DbSet<Ogretmen> Ogretmenler { get; set; }
         public DbSet<DersProgram> DersProgramlar { get; set; }
-        public DbSet<Sinif> Siniflar { get; set; }
+        public DbSet<Siniflar> Siniflar { get; set; }
         public DbSet<DonemDers> DonemDers { get; set; }
         public DbSet<OgrenciDonemDers> OgrenciDonemDers { get; set; }
         public DbSet<Yoklama> Yoklamalar { get; set; }
-        public object Ogretmen { get; set; }
+        
 
         public BilgeDbContext()
         {

@@ -15,7 +15,7 @@ namespace Bilge.Domain
 
         public DateTime Saat { get; set; }
 
-        public int PlanID { get; set; }
+        public int DersProgramId { get; set; }
         public DersProgram DersProgram { get; set; }
     
        

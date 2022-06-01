@@ -12,6 +12,47 @@ namespace Bilge.DAL.EfCore
 {
   public  class OgrenciRepository : OkulDbRepository<Ogrenci>, IOgrenciRepository
     {
+
+
+        BilgeDbContext c = new BilgeDbContext();
+
+        public void AddOgrenci(Ogrenci ogrenci)
+        {
+            c.Add(ogrenci);
+            c.SaveChanges();
+
+        }
+
+
+        public void DeleteOgrenci(Ogrenci ogrenci)
+        {
+
+            c.Remove(ogrenci);
+            c.SaveChanges();
+
+        }
+
+
+
+        public List<Ogrenci> ListAllOgrenci()
+        {
+
+            return c.Ogrenciler.ToList();
+
+
+        }
+
+        public void UpdateOgrenci(Ogrenci ogrenci)
+        {
+
+            c.Update(ogrenci);
+            c.SaveChanges();
+
+
+        }
+
+
+
         //public OgrenciRepository(bool uyelikAlinsinMi = true) : base(uyelikAlinsinMi) { }
         //public IslemSonuc<List<Ogrenci>> GetirTumu()
         //{
