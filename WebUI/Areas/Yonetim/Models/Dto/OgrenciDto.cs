@@ -2,10 +2,10 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-lausing Okul.Domain;
-using System;
+using Okul.Domain;
+
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+
 using System.Linq;
 using System.Threading.Tasks;
 

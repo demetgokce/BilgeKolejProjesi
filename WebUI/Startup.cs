@@ -29,12 +29,12 @@ namespace WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(Startup));
 
+            services.AddControllersWithViews();
             services.AddDbContext<BilgeDbContext>((options => options.UseNpgsql(@"Server=127.0.0.1;Port=5432;Database=BilgeDb;User Id=postgres;Password=123;")));
-           
-            
 
+            // AutoMapper Entegrasyonu
+            
             // DAL Katmanindaki Servislerin Register Edilmesi
             //services.AddScoped<IBransRepository,BransRepository>();
             // services.AddScoped<IKullanicilarRepository, KullanicilarRepsitory>();
@@ -84,7 +84,9 @@ namespace WebUI
 
             app.UseRouting();
             app.UseAuthentication();
+
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {

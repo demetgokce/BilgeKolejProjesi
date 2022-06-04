@@ -49,8 +49,6 @@ namespace Okul.DAL.EfCore
 
            
            
-            //dbContext.Entry(entity).State = EntityState.Modified;
-            //dbContext.Update<TEntity>(entity);
            dbContext.Entry<TEntity>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             //dbContext.Set<TEntity>().Update(entity);
             dbContext.SaveChanges();
