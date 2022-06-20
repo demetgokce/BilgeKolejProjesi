@@ -18,10 +18,10 @@ namespace Bilge.Domain
         public DbSet<Veli> Veliler { get; set; }
         public DbSet<Ogrenci> Ogrenciler { get; set; }
         public DbSet<Ogretmen> Ogretmenler { get; set; }
-        public DbSet<DersProgram> DersProgramlar { get; set; }
+
         public DbSet<Siniflar> Siniflar { get; set; }
-        public DbSet<DonemDers> DonemDers { get; set; }
-        public DbSet<OgrenciDonemDers> OgrenciDonemDers { get; set; }
+      
+     
         public DbSet<Yoklama> Yoklamalar { get; set; }
 
         public DbSet<Kullanici> Kullanicilar { get; set; }
@@ -37,7 +37,7 @@ namespace Bilge.Domain
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseSqlServer(@"Server=.;Database=OkulDb;User Id=sa;password=123");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-7I7PU0G;Initial Catalog=OkulDb ; Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             //optionsBuilder.UseNpgsql(@"Server=127.0.0.1;Port=5432;Database=BilgeDb;User Id=postgres;Password=123;");
         }
 

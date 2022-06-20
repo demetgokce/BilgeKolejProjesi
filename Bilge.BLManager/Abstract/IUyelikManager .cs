@@ -11,7 +11,7 @@ namespace Okul.BLManager.Abstract
 {
     public interface IUyelikManager:IManager<Uyelik>
     {
-       
+     
 
     }
 }

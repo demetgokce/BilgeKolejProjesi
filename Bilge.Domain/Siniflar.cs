@@ -20,9 +20,9 @@ namespace Bilge.Domain
         [MaxLength(3, ErrorMessage = "Bölüm kodu 3 karakterden oluşmalıdır.")]
         public string Kod { get; set; }
 
-        public ICollection<Ogrenci> Ogrenciler { get; set; }
+   
 
-        public ICollection<DersProgram> DersProgram { get; set; }
-
+        public virtual ICollection<Ogrenci> Ogrenci { get; set; }
+        public virtual ICollection<Ders> Dersler { get; set; }
     }
 }

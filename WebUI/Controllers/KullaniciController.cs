@@ -29,9 +29,11 @@ namespace WebUI.Controllers
       public IActionResult Giris()
       {
 
-           
-            return View();
-      }
+
+            LoginDto loginDto = new LoginDto();
+
+            return View(loginDto);
+        }
     
 
         [HttpPost]

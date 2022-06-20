@@ -32,8 +32,5 @@ namespace Bilge.Domain
         public int Yil { get; set; }
 
 
-
-
-        public virtual ICollection<DonemDers> DonemDersler { get; set; }
     }
 }

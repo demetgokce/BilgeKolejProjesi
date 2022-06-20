@@ -53,13 +53,9 @@ namespace Bilge.Domain
         [Display(Name = "Okuldan Çıkış Tarihi")]
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime CikisTarih { get; set; }
-         public int SinifId { get; set; }
-        public virtual Siniflar Siniflar { get; set; }
-        public int DersId { get; set; }
-        public virtual Ders Ders { get; set; }
-        public virtual ICollection<DersProgram> DersPrograms { get; set; }
-        public virtual ICollection<Yoklama> Yoklamas { get; set; }
-        public virtual ICollection<OgrenciDonemDers> OgrenciDonemDers{ get; set; }
-        public virtual ICollection<DonemDers> DonemDers { get; set; }
+        public int SinifId { get; set; }
+        public Siniflar Sinif { get; set; }
+
+        public ICollection<Yoklama> Yoklamalar { get; set; }
     }
 }

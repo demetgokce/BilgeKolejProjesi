@@ -22,14 +22,12 @@ namespace Bilge.Domain
         [MaxLength(3, ErrorMessage = "Ders kodu 3 karakterden oluşmalıdır.")]
         public string Kod { get; set; }
 
-      
-
-       
 
 
-        public virtual ICollection<DonemDers> DonemDersler { get; set; }
-        public ICollection<Ogretmen> Ogretmenler { get; set; }
-        public ICollection<DersProgram> DersProgramlar { get; set; }
 
+
+
+        public ICollection<Ogretmen> Ogretmen { get; set; }
+        public ICollection<DersProgram> DersProgram { get; set; }
     }
 }
