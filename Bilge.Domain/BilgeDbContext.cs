@@ -43,8 +43,25 @@ namespace Bilge.Domain
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
 
+
+            #region Kullanici
+            modelBuilder.Entity<Kullanici>()
+                .Property(x => x.UserName)
+                .HasMaxLength(20)
+                .IsRequired();
+
+
+            modelBuilder.Entity<Kullanici>()
+                .Property(x => x.Password)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Kullanici>()
+                .Property(x => x.Role)
+                .HasMaxLength(20)
+                .HasDefaultValue<string>("user");
+            #endregion
 
             #region Sinif
             modelBuilder.Entity<Siniflar>().Property(e => e.SinifAdi).HasMaxLength(50).IsRequired();

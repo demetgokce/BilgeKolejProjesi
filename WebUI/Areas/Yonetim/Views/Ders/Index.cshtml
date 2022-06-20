@@ -41,15 +41,15 @@
                 <div class="col-md-10">
                     <select id="SinifId">
                     </select>
-                    @Html.ValidationMessageFor(model => model.SinifId)
+                    @Html.ValidationMessageFor(model => model.Id)
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.SinifId, "DersId", new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Id, "DersId", new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     <select id="BolumId" name="BolumId"></select>
-                    @Html.ValidationMessageFor(model => model.SinifId)
+                    @Html.ValidationMessageFor(model => model.Id)
                 </div>
             </div>
 

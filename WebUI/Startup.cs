@@ -31,10 +31,11 @@ namespace WebUI
         {
 
             services.AddControllersWithViews();
-            services.AddDbContext<BilgeDbContext>((options => options.UseNpgsql(@"Server=127.0.0.1;Port=5432;Database=BilgeDb;User Id=postgres;Password=123;")));
+            services.AddDbContext<BilgeDbContext>(options => options.UseSqlServer(@"Data Source=DESKTOP-7I7PU0G;Initial Catalog=OkulDb ; Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
+
 
             // AutoMapper Entegrasyonu
-            
+
             // DAL Katmanindaki Servislerin Register Edilmesi
             //services.AddScoped<IBransRepository,BransRepository>();
             // services.AddScoped<IKullanicilarRepository, KullanicilarRepsitory>();
@@ -58,8 +59,8 @@ namespace WebUI
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(x =>
                 {
-                    x.LoginPath = "/OgrenciIslem/GirisYap"; //Giris Sayfasi
-                    x.LogoutPath = "/OgrenciIslem/Cikis"; // Cikis 
+                    x.LoginPath = "/Kullanici/Giris"; //Giris Sayfasi
+                    x.LogoutPath = "/Kullnici/Cikis"; // Cikis 
                     x.AccessDeniedPath = "/OgrenciIslem/YetkiHatasi";
                     x.Cookie.HttpOnly = true;
                     x.Cookie.Name = "Bilge";
@@ -93,7 +94,7 @@ namespace WebUI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                name: "areas",
+                name: "Areas",
                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                 );
 

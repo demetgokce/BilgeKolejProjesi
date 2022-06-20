@@ -1,6 +1,11 @@
 ﻿@model LoginDto
 
 
+@{
+
+    Layout = null;
+
+}
 
 
 
@@ -45,52 +50,52 @@
     <!-- header -->
     <header>
         <div class="row">
-        
-                    
-                         
-                       
-                        <div class="container">
-                            <div class="header d-lg-flex justify-content-between align-items-center py-2 px-sm-2 px-1">
-                                <!-- logo -->
-                                <div id="logo">
-                                    <h1><a href="index.html">Bilge Adam</a></h1>
-                                </div>
-                                <!-- //logo -->
-                                <!-- nav -->
-                                <div class="nav_w3ls ml-lg-5">
-                                    <nav>
-                                        <label for="drop" class="toggle">Menu</label>
-                                        <input type="checkbox" id="drop" />
-                                        <ul class="menu">
-                                            <li><a href="index.html">Ana Sayfa</a></li>
-                                            <li><a href="index.html">Hakkımızda</a></li>
-                                            <li><a href="index.html">Şimdi Katıl</a></li>
-                                            <li>
-                                                <!-- First Tier Drop Down -->
-                                                <label for="drop-2" class="toggle toogle-2">
-                                                    Pages <span class="fa fa-angle-down"
-                                                                aria-hidden="true"></span>
-                                                </label>
-                                                <a href="#">Menu <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-                                                <input type="checkbox" id="drop-2" />
-                                                <ul>
-                                                    <li><a href="index.html" class="drop-text">Etkinlikler</a></li>
 
-                                                    <li><a href="index.html" class="drop-text">Kurslar</a></li>
-                                                    <li><a href="index.html" class="drop-text">İstatisliklerimiz</a></li>
-                                                    <li><a href="index.html" class="drop-text">Galeri</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="index.html">İletişim</a></li>
-                                            <li><a href="Giris.html">Giris</a></li>
-                                            <li> <a class="btn btn-block" asp-area="" asp-controller="Uyelik" asp-action="Kayit">Kayit Ol</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <!-- //nav -->
-                            </div>
-                        </div>
-       </div>
+
+
+
+            <div class="container">
+                <div class="header d-lg-flex justify-content-between align-items-center py-2 px-sm-2 px-1">
+                    <!-- logo -->
+                    <div id="logo">
+                        <h1><a href="index.html">Bilge Adam</a></h1>
+                    </div>
+                    <!-- //logo -->
+                    <!-- nav -->
+                    <div class="nav_w3ls ml-lg-5">
+                        <nav>
+                            <label for="drop" class="toggle">Menu</label>
+                            <input type="checkbox" id="drop" />
+                            <ul class="menu">
+                                <li><a href="index.html">Ana Sayfa</a></li>
+                                <li><a href="index.html">Hakkımızda</a></li>
+                                <li><a href="index.html">Şimdi Katıl</a></li>
+                                <li>
+                                    <!-- First Tier Drop Down -->
+                                    <label for="drop-2" class="toggle toogle-2">
+                                        Pages <span class="fa fa-angle-down"
+                                                    aria-hidden="true"></span>
+                                    </label>
+                                    <a href="#">Menu <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                    <input type="checkbox" id="drop-2" />
+                                    <ul>
+                                        <li><a href="index.html" class="drop-text">Etkinlikler</a></li>
+
+                                        <li><a href="index.html" class="drop-text">Kurslar</a></li>
+                                        <li><a href="index.html" class="drop-text">İstatisliklerimiz</a></li>
+                                        <li><a href="index.html" class="drop-text">Galeri</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="index.html">İletişim</a></li>
+                                <li><a href="Giris.html">Giris</a></li>
+                                <li> <a class="btn btn-block" asp-area="" asp-controller="Uyelik" asp-action="Kayit">Kayit Ol</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- //nav -->
+                </div>
+            </div>
+        </div>
 
     </header>
     <!-- //header -->
@@ -101,37 +106,37 @@
             <div class="modal-body my-5 pt-4">
                 <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold">Login Now</h3>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <form method="post" asp-controller="Kullanici" asp-action="Giris">
-                    <div class="form-group">
-                        <label class="col-form-label">Username</label>
-                        <input type="text" class="form-control" placeholder="OgrenciNo" name="Name" required="">
-                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                    </div>
-                    <div class="form-group">
-                        <label class="col-form-label">Password</label>
-                        <input type="password" class="form-control" placeholder="*****" name="Password" required="">
-                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            <form method="post" asp-controller="Kullanici" asp-action="Giris">
+                <div class="form-group">
+                    <label class="col-form-label">Username</label>
+                    <input type="text" class="form-control" placeholder="OgrenciNo" name="Name" required="">
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="*****" name="Password" required="">
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
 
+                </div>
+                 <a class="btn btn-block" asp-area="" asp-controller="Areas" asp-action="Yonetim">Giris</a>
+                <div class="row sub-w3l mt-3 mb-5">
+                    <div class="col-sm-6 sub-w3layouts_hub">
+                        <input type="checkbox" id="brand1" value="">
+                        <label for="brand1" class="text-li text-style-w3ls">
+                            <span></span>Remember me?
+                        </label>
                     </div>
-                    <button type="submit" class="btn button-style-w3">Giris</button>
-                    <div class="row sub-w3l mt-3 mb-5">
-                        <div class="col-sm-6 sub-w3layouts_hub">
-                            <input type="checkbox" id="brand1" value="">
-                            <label for="brand1" class="text-li text-style-w3ls">
-                                <span></span>Remember me?
-                            </label>
-                        </div>
-                        <div class="col-sm-6 forgot-w3l text-sm-right">
-                            <a href="#" class="text-li text-style-w3ls">Forgot Password?</a>
-                        </div>
+                    <div class="col-sm-6 forgot-w3l text-sm-right">
+                        <a href="#" class="text-li text-style-w3ls">Forgot Password?</a>
                     </div>
-                    <p class="text-center dont-do text-style-w3ls text-li">
-                        Don't have an account?
-                        <a href="Kayit.html" class="font-weight-bold text-li">
-                            Şimdi Kayıt Ol
-                        </a>
-                    </p>
-                </form>
+                </div>
+                <p class="text-center dont-do text-style-w3ls text-li">
+                    Don't have an account?
+                    <a href="Kayit.html" class="font-weight-bold text-li">
+                        Şimdi Kayıt Ol
+                    </a>
+                </p>
+            </form>
             </div>
             <!-- //login -->
         </div>

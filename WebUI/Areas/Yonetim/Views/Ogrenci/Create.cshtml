@@ -1,0 +1,73 @@
+﻿@model WebUI.Areas.Yonetim.Models.OgrenciCreateDto
+
+
+<form method="post" asp-action="Create" asp-controller="Ogrenci">
+
+
+
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">Ögrenci Kayit</h3>
+        </div>
+
+        @Html.ValidationSummary()
+        <div class="card-body">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Adi" asp-for="@Model.OgrenciDto.Adi">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Soyadi" asp-for="@Model.OgrenciDto.Soyadi">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"></span>
+                </div>
+                <input type="text" class="form-control" placeholder="TcKimlik" asp-for="@Model.OgrenciDto.TcNo">
+            </div>
+
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                </div>
+                <input type="email" class="form-control" placeholder="Email" asp-for="@Model.OgrenciDto.Email">
+            </div>
+
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                </div>
+                <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric" asp-for="@Model.OgrenciDto.DogumTarihi">
+            </div>
+
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                </div>
+                <input type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask="" inputmode="tel" asp-for="@Model.OgrenciDto.Gsm" placeholder="telegon numarasi">
+            </div>
+            <select id="ddlSinif" name="Id" asp-items="Model.Siniflar">
+                <option value="0">Sinif Seciniz</option>
+            </select>
+
+            <div class="bootstrap-switch-container" style="width: 126px; margin-left: 42px;">
+                <span class="bootstrap-switch-handle-on bootstrap-switch-success" style="width: 42px;">Bayan</span><span class="bootstrap-switch-label" style="width: 42px;">&nbsp;</span><span class="bootstrap-switch-handle-off bootstrap-switch-danger" style="width: 42px;">Erkek</span><input type="checkbox" name="my-checkbox" checked="" data-bootstrap-switch="" data-off-color="danger" data-on-color="success">
+            </div>
+
+            <button type="submit" class="btn btn-info">Sign in</button>
+            <!-- /input-group -->
+        </div>
+        <!-- /.card-body -->
+    </div>
+
+</form>

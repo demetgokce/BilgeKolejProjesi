@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Bilge.Domain;
+using Microsoft.AspNetCore.Mvc;
 using Okul.BLManager.Abstract;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ namespace WebUI.Controllers
 {
     public class UyelikController : Controller
     {
-
+        
         private readonly IUyelikManager manager;
         public UyelikController(IUyelikManager manager)
         {
@@ -24,9 +25,10 @@ namespace WebUI.Controllers
 
             return View();
         }
-
-        public IActionResult Kayit()
+        [HttpPost]
+        public IActionResult Kayit(Uyelik uyelik)
         {
+            
 
 
             return View();

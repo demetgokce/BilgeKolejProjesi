@@ -101,12 +101,23 @@
     <Compile Include="Areas\Yonetim\Controllers\OgrenciController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\SinifController.cs" />
     <Compile Include="Areas\Yonetim\Models\AutoMapperProfile.cs" />
-    <Compile Include="Areas\Yonetim\Models\Dto\OgrenciCreateDto.cs" />
-    <Compile Include="Areas\Yonetim\Models\Dto\OgrenciDto.cs" />
+    <Compile Include="Areas\Yonetim\Models\Dtos\OgrenciCreateDto.cs" />
+    <Compile Include="Areas\Yonetim\Models\Dtos\OgrenciDto.cs" />
     <Compile Include="Areas\Yonetim\Models\SinifModel.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
   </ItemGroup>
 
@@ -123,6 +134,7 @@
   <ItemGroup>
     <None Include="Areas\Yonetim\Views\Ders\Index.cshtml" />
     <None Include="Areas\Yonetim\Views\Home\Index.cshtml" />
+    <None Include="Areas\Yonetim\Views\Ogrenci\Create.cshtml" />
     <None Include="Areas\Yonetim\Views\Ogrenci\Index.cshtml" />
     <None Include="Areas\Yonetim\Views\Shared\_Footer.cshtml" />
     <None Include="Areas\Yonetim\Views\Shared\_Layout.cshtml" />
