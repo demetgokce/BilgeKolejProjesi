@@ -4,14 +4,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Okul.BLManager.Abstract;
-using Okul.BLManager.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebUI.Areas.Admin.Models;
 using WebUI.Areas.Admin.Models.Dtos;
-using WebUI.Areas.Yonetim.Models;
 
 namespace WebUI.Areas.Yonetim.Controllers
 {
@@ -53,7 +51,7 @@ namespace WebUI.Areas.Yonetim.Controllers
             //new SelectList(fruits, "Id", "SinifAdi");
             var siniflar = sinifManager.GetAll(null);
             var sinifSelect = mapper.Map<List<Siniflar>, List<SinifModel>>(siniflar);
-            createDto.Siniflar = new SelectList(sinifSelect, "Id", "SinifAdi");
+            createDto.Sinif = new SelectList(sinifSelect, "Id", "SinifAdi");
 
             return View(createDto);
         }

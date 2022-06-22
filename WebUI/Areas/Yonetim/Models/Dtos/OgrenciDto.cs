@@ -1,11 +1,8 @@
 ﻿using Bilge.Domain;
-using System;
-using System.ComponentModel.DataAnnotations;
-
 using Okul.Domain;
-
+using System;
 using System.Collections.Generic;
-
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -37,7 +34,7 @@ namespace WebUI.Areas.Admin.Models.Dtos
         public DateTime DogumTarihi { get; set; }
 
         public int SinifId { get; set; }
-        public Siniflar Siniflar { get; set; }
+        public Siniflar Sinif { get; set; }
 
 
     }

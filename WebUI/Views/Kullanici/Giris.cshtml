@@ -1,35 +1,8 @@
 ﻿@model LoginDto
 
 
-@{
-
-    Layout = null;
-
-}
 
 
-
-
-<!DOCTYPE HTML>
-<html lang="zxx">
-
-<head>
-    <title>Bilge Adam</title>
-    <!-- Meta tag Keywords -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8" />
-    <meta name="keywords" content="" />
-    <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-
-
-    </script>
     <!-- //Meta tag Keywords -->
     <!-- Custom-Files -->
     <link href="~/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
@@ -44,7 +17,7 @@
           rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
     <!-- //Web-Fonts -->
-</head>
+
 
 <body>
     <!-- header -->
@@ -106,37 +79,43 @@
             <div class="modal-body my-5 pt-4">
                 <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold">Login Now</h3>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <form method="post" asp-controller="Kullanici" asp-action="Giris">
-                <div class="form-group">
-                    <label class="col-form-label">Username</label>
-                    <input type="text" class="form-control" placeholder="OgrenciNo" name="Name" required="">
-                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-group">
-                    <label class="col-form-label">Password</label>
-                    <input type="password" class="form-control" placeholder="*****" name="Password" required="">
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <form method="post" asp-controller="Kullanici" asp-action="Giris">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Kullanici Kodu</label>
+                        <input type="text" asp-for="UserName" class="form-control" aria-describedby="emailHelp" placeholder="Enter username">
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Password</label>
+                        <input type="password" asp-for="Password" class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
 
-                </div>
-                 <a class="btn btn-block" asp-area="" asp-controller="Areas" asp-action="Yonetim">Giris</a>
-                <div class="row sub-w3l mt-3 mb-5">
-                    <div class="col-sm-6 sub-w3layouts_hub">
-                        <input type="checkbox" id="brand1" value="">
-                        <label for="brand1" class="text-li text-style-w3ls">
-                            <span></span>Remember me?
-                        </label>
                     </div>
-                    <div class="col-sm-6 forgot-w3l text-sm-right">
-                        <a href="#" class="text-li text-style-w3ls">Forgot Password?</a>
+                    <div class="form-group">
+                        <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
                     </div>
-                </div>
-                <p class="text-center dont-do text-style-w3ls text-li">
-                    Don't have an account?
-                    <a href="Kayit.html" class="font-weight-bold text-li">
-                        Şimdi Kayıt Ol
-                    </a>
-                </p>
-            </form>
+                    <div class="col-md-12 text-center ">
+                        <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                    </div>
+                    <div class="col-md-12 ">
+                        <div class="login-or">
+                            <hr class="hr-or">
+                            <span class="span-or">or</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <p class="text-center">
+                            <a href="javascript:void();" class="google btn mybtn">
+                                <i class="fa fa-google-plus">
+                                </i> Signup using Google
+                            </a>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+                    </div>
+                </form>
             </div>
             <!-- //login -->
         </div>
@@ -264,7 +243,7 @@
 
 </body>
 
-</html>
+
 
 @section Scripts
  {

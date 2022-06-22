@@ -1,16 +1,16 @@
-﻿@model WebUI.Areas.Yonetim.Models.OgrenciCreateDto
+﻿@model OgrenciCreateDto
 
 
-<form method="post" asp-action="Create" asp-controller="Ogrenci">
+    <form method="post" asp-action="Create" asp-controller="Ogrenci">
 
 
 
-    <div class="card card-info">
-        <div class="card-header">
-            <h3 class="card-title">Ögrenci Kayit</h3>
-        </div>
+        <div class="card card-info">
+            <div class="card-header">
+                <h3 class="card-title">Ögrenci Kayit</h3>
+            </div>
 
-        @Html.ValidationSummary()
+            @Html.ValidationSummary()
         <div class="card-body">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -56,7 +56,7 @@
                 </div>
                 <input type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask="" inputmode="tel" asp-for="@Model.OgrenciDto.Gsm" placeholder="telegon numarasi">
             </div>
-            <select id="ddlSinif" name="Id" asp-items="Model.Siniflar">
+            <select id="ddlSinif" name="Id" asp-items="Model.Sinif">
                 <option value="0">Sinif Seciniz</option>
             </select>
 
@@ -67,7 +67,7 @@
             <button type="submit" class="btn btn-info">Sign in</button>
             <!-- /input-group -->
         </div>
-        <!-- /.card-body -->
-    </div>
+            <!-- /.card-body -->
+        </div>
 
-</form>
+    </form>

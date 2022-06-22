@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebUI.Areas.Yonetim.Controllers
+namespace WebUI.Areas.Admin.Controllers
 {
     [Area("Yonetim")]
     public class HomeController : Controller

@@ -1,5 +1,4 @@
-﻿
-@model IEnumerable<Ogrenci>
+﻿@model IEnumerable<Ogrenci>
 
 <p>
     <a class="btn btn-success" asp-controller="Ogrenci" asp-action="Create">Yeni</a>
@@ -15,32 +14,33 @@
             <td> @Html.DisplayNameFor(model => model.Gsm)</td>
             <td> @Html.DisplayNameFor(model => model.EPosta)</td>
             <td> @Html.DisplayNameFor(model => model.DogumTarih)</td>
-            <td> @Html.DisplayNameFor(model => model.GirisTarih)</td>
-            <td> @Html.DisplayNameFor(model => model.CikisTarih)</td>
+          
             <td>İşlem</td>
         </tr>
     </thead>
     <tbody>
+       
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Adi</td>
+                <td>@item.Soyadi</td>
+                <td>@item.TcNo</td>
+                <td>@item.Gsm</td>
+                <td>@item.EPosta</td>
+                <td>@item.DogumTarih</td>
+               
 
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>@item.Id</td>
-            <td>@item.Adi</td>
-            <td>@item.Soyadi</td>
-            <td>@item.TcNo</td>
-            <td>@item.Gsm</td>
-            <td>@item.EPosta</td>
-            <td>@item.DogumTarih</td>
-            <td>@item.GirisTarih</td>
-            <td>@item.CikisTarih</td>
-            <td>
-                <a asp-controller="Ogrenci" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
-                <a asp-controller="Ogrenci" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
-            </td>
-        </tr>
-        }
-
+                <td>
+                    <a asp-controller="Ogrenci" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
+                    <a asp-controller="Ogrenci" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+            }
+       
     </tbody>
 </table>
+
+
 
