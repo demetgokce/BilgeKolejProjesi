@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Bilge.Domain.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Okul.Domain;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Bilge.Domain
 {
-    public class BilgeDbContext : DbContext
+    public class BilgeDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Donem> Donem { get; set; }
         public DbSet<Ders> Ders { get; set; }

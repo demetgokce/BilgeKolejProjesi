@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Ders>
+
+
+
+<p>
+    <a class="btn btn-success" asp-controller="Ders" asp-action="Create">Yeni</a>
+</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td> @Html.DisplayNameFor(model => model.Id)</td>
+            <td> @Html.DisplayNameFor(model => model.DersAd)</td>
+            <td>İşlem</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.DersAd</td>
+                <td>
+                    <a asp-controller="Ders" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
+                    <a asp-controller="Ders" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -1,0 +1,21 @@
+﻿@model Ders
+
+<form method="post" asp-controller="Ders" asp-action="Update">
+
+    <div class="form-group row">
+        <label asp-for="DersAd" class="col-md-6 col-form-label"></label>
+
+        <div class="col-md-6">
+            <input type="text" asp-for="DersAd" class="form-control" value="@Model.DersAd" />
+
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-default" asp-action="Index" asp-controller="Ders">Listeye Geri Dön</a>
+        </div>
+    </div>
+</form>

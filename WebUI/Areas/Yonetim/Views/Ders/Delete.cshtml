@@ -1,0 +1,14 @@
+﻿@model Ders
+
+<form method="post" asp-controller="Ders" asp-action="Delete">
+
+    <div class="form-group row">
+        <label asp-for="DersAd" class="col-md-2 col-form-label">@Model.DersAd</label>
+        <p>Bu kaydi Silmek istediginizden eminmisiniz ?</p>
+
+    </div>
+    <div class="form-group row">
+        <button type="submit" class="btn btn-primary">Sil</button>
+        <a class="btn btn-secondary" asp-action="Index" asp-controller="Ders">Listeye Geri Dön</a>
+    </div>
+</form>

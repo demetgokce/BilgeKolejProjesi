@@ -1946,7 +1946,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Yonetim\Data\" />
-    <Folder Include="Areas\Yonetim\Models\" />
   </ItemGroup>
 
 </Project>
