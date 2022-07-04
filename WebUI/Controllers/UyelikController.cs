@@ -1,5 +1,5 @@
 ﻿using Bilge.Domain;
-using Bilge.Domain.Identity;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
@@ -13,13 +13,12 @@ namespace WebUI.Controllers
 {
     public class UyelikController : Controller
     {
-        private UserManager<ApplicationUser> userManager;
+     
       
         public UyelikController()
         {
-            var userStore = new UserStore<ApplicationUser>(new BilgeDbContext());
+            
 
-            userManager = new UserManager<ApplicationUser>(userStore);
         }
     
         public IActionResult İndex()
@@ -37,31 +36,31 @@ namespace WebUI.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Kayit(Uyelik uyelik)
         {
-            if(ModelState.IsValid)
-            {
-                var user = new ApplicatonUser();
-                user.UserName = uyelik.UserName;
-                user.Email = uyelik.Email;
+            //if(ModelState.IsValid)
+            //{
+            //    var user = new ApplicatonUser();
+            //    user.UserName = uyelik.UserName;
+            //    user.Email = uyelik.Email;
 
-                var result = IKullaniciManager.Create(user, uyelik.Password);
+            //    var result = IKullaniciManager.Create(user, uyelik.Password);
 
 
-                if(result.Succeeded)
-                {
+            //    if(result.Succeeded)
+            //    {
 
-                    return RedirectToAction("Giris");
+            //        return RedirectToAction("Giris");
 
-                }
-                else
-                {
+            //    }
+            //    else
+            //    {
 
-                    foreach(var error in result.Errors)
-                    {
-                        ModelState.AddModelError("", error);
+            //        foreach(var error in result.Errors)
+            //        {
+            //            ModelState.AddModelError("", error);
 
-                    }
-                }
-            }
+            //        }
+            //    }
+            //}
 
 
             return View(uyelik);

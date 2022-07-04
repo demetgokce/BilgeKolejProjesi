@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace WebUI.Controllers
 {
-    [Authorize(Roles = "Yonetici")]
+    [Authorize(Roles = "Admin")]
     public class DonemController : Controller
     {
 

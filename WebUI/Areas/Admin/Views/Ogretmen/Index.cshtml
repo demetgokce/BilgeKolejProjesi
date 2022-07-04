@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Ogretmen>
+
+<p>
+    <a class="btn btn-success" asp-controller="Ogretmen" asp-action="Create">Yeni</a>
+</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td> @Html.DisplayNameFor(model => model.Id)</td>
+            <td> @Html.DisplayNameFor(model => model.Ad)</td>
+            <td> @Html.DisplayNameFor(model => model.Soyad)</td>
+            <td> @Html.DisplayNameFor(model => model.TcNo)</td>
+            <td> @Html.DisplayNameFor(model => model.Gsm)</td>
+            <td> @Html.DisplayNameFor(model => model.EPosta)</td>
+            <td> @Html.DisplayNameFor(model => model.DogumTarih)</td>
+
+            <td>Kayıt</td>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Ad</td>
+                <td>@item.Soyad</td>
+                <td>@item.TcNo</td>
+                <td>@item.Gsm</td>
+                <td>@item.EPosta</td>
+                <td>@item.DogumTarih</td>
+
+
+                <td>
+                    <a asp-controller="Ogretmen" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Guncelle</a>
+                    <a asp-controller="Ogretmen" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -62,7 +62,7 @@ namespace WebUI.Controllers
                                         , new ClaimsPrincipal(claimIdentity));
 
 
-                return RedirectToAction("Index", "Home", new { area = "Yonetim" });
+                return RedirectToAction("Index", "Home", new { area = "Admin" });
 
 
             }

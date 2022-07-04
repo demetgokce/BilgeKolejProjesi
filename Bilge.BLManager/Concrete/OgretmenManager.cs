@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bilge.BLManager.Concrete
 {
-    public class OgrenciManager : ManagerBase<Ogretmen>, IOgretmenManager
+    public class OgretmenManager : ManagerBase<Ogretmen>, IOgretmenManager
     {
 
         public bool CheckForTckimlik(string tcno)

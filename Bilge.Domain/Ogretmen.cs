@@ -52,12 +52,8 @@ namespace Bilge.Domain
         [Required]
         public int DersId { get; set; }
         public Ders Ders { get; set; }
-
-
-        
-
-
-
+        public Siniflar Sinif { get; set; }
+        public int SinifId { get; set; }
 
     }
 }

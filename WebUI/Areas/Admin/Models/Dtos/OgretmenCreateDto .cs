@@ -11,5 +11,6 @@ namespace WebUI.Areas.Admin.Models.Dtos
     {
         public OgrenciDto OgrenciDto { get; set; }
         public SelectList Sinif { get; set; }
+        public OgretmenDto OgretmenDto { get; internal set; }
     }
 }

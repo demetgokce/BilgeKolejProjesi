@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WebUI.Areas.Yonetim.Controllers
 {
-    [Area("Yonetim")]
+    [Area("Admin")]
     public class DersController : Controller
     {
 

@@ -14,6 +14,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Bilge.BLManager.Abstract;
+using Bilge.BLManager.Concrete;
 
 namespace WebUI
 {
@@ -24,7 +26,7 @@ namespace WebUI
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -52,7 +54,7 @@ namespace WebUI
             services.AddScoped<IOgrenciManager, OgrenciManager>();
             services.AddScoped<ISiniflarManager, SiniflarManager>();
             services.AddScoped<IUyelikManager, UyelikManager>();
-           
+            services.AddScoped<IOgretmenManager, OgretmenManager>();
 
 
             #region Cookie Base Authentication Ayarlari

@@ -32,7 +32,9 @@ namespace WebUI.Areas.Admin.Models.Dtos
         //[Required(ErrorMessage ="Cisiyet alani Zorunludur")]
         public bool Cinsiyet { get; set; }
         public DateTime DogumTarihi { get; set; }
-
+      
+        public DateTime GirisTarihi { get; set; }
+        public DateTime CikisTarihi { get; set; }
         public int SinifId { get; set; }
         public Siniflar Sinif { get; set; }
 

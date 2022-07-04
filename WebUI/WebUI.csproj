@@ -110,9 +110,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Areas\Yonetim\Views\Ogrenci\Create.cshtml" />
-    <None Include="Areas\Yonetim\Views\Ogrenci\Index.cshtml" />
-    <None Include="Areas\Yonetim\Views\Sinif\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Ogrenci\Create.cshtml" />
+    <None Include="Areas\Admin\Views\Ogrenci\Index.cshtml" />
+    <None Include="Areas\Admin\Views\Sinif\Index.cshtml" />
     <None Include="wwwroot\dist\css\adminlte.css.map" />
     <None Include="wwwroot\dist\css\adminlte.min.css.map" />
     <None Include="wwwroot\dist\css\alt\adminlte.components.css.map" />
@@ -1945,7 +1945,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Yonetim\Data\" />
+    <Folder Include="Areas\Admin\Data\" />
   </ItemGroup>
 
 </Project>

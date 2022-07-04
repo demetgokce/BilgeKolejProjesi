@@ -13,7 +13,7 @@ using WebUI.Areas.Admin.Models.Dtos;
 
 namespace WebUI.Areas.Yonetim.Controllers
 {
-    [Authorize(Roles = "Yonetim")]
+    [Authorize(Roles = "Admin")]
     public class OgrenciController : Controller
     {
         private readonly IOgrenciManager manager;
@@ -72,7 +72,7 @@ namespace WebUI.Areas.Yonetim.Controllers
                     manager.CheckForGsm(ogrenci.Gsm);
                     manager.Add(ogrenci);
 
-                    return RedirectToAction("Index", "Ogrenci", new { Areas = "Yonetim" });
+                    return RedirectToAction("Index", "Ogrenci", new { Areas = "Admin" });
                 }
                 catch (Exception ex)
                 {

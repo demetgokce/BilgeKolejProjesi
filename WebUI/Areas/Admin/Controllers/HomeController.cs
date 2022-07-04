@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebUI.Areas.Admin.Controllers
 {
-    [Area("Yonetim")]
+    [Area("Admin")]
     public class HomeController : Controller
     {
         public IActionResult Index()

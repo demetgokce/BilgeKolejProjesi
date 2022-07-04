@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace WebUI.Controllers
 {
 
-    [Authorize(Roles ="admin")]
+    [Authorize(Roles ="Admin")]
     public class SinifController : Controller
     {
         private readonly ISinifRepository repository;
