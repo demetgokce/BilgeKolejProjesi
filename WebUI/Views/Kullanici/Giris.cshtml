@@ -1,22 +1,20 @@
 ﻿@model LoginDto
 
 
-
-
-    <!-- //Meta tag Keywords -->
-    <!-- Custom-Files -->
-    <link href="~/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <!-- Bootstrap-CSS -->
-    <link href="~/web/css/style.css" rel='stylesheet' type='text/css' />
-    <!-- Style-CSS -->
-    <link href="~/web/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Font-Awesome-Icons-CSS -->
-    <!-- //Custom-Files -->
-    <!-- Web-Fonts -->
-    <link href="//fonts.googleapis.com/css?family=Lora:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese"
-          rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
-    <!-- //Web-Fonts -->
+<!-- //Meta tag Keywords -->
+<!-- Custom-Files -->
+<link href="~/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Bootstrap-CSS -->
+<link href="~/web/css/style.css" rel='stylesheet' type='text/css' />
+<!-- Style-CSS -->
+<link href="~/web/css/font-awesome.min.css" rel="stylesheet">
+<!-- Font-Awesome-Icons-CSS -->
+<!-- //Custom-Files -->
+<!-- Web-Fonts -->
+<link href="//fonts.googleapis.com/css?family=Lora:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese"
+      rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+<!-- //Web-Fonts -->
 
 
 <body>
@@ -78,44 +76,44 @@
             <!-- login  -->
             <div class="modal-body my-5 pt-4">
                 <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold">Login Now</h3>
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <form method="post" asp-controller="Areas" asp-action="Admin">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Kullanici Kodu</label>
-                        <input type="text" asp-for="UserName" class="form-control" aria-describedby="emailHelp" placeholder="Enter username">
-                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Password</label>
-                        <input type="password" asp-for="Password" class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
-                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
 
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <form method="post" asp-controller="Kullanici" asp-action="Giris">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Kullanici Kodu </label>
+                    <input type="text" asp-for="UserName" class="form-control" aria-describedby="emailHelp" placeholder="Enter UserName">
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Password</label>
+                    <input type="password" asp-for="Password" class="form-control" aria-describedby="emailHelp" placeholder="Enter Password">
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                </div>
+                @*<div class="form-group">
+           <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
+        </div>*@
+                <div class="col-md-12 text-center ">
+                    <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                    <a asp-controller="Areas" asp-action="Admin" class="button button-primary button-outline"></a>
+                </div>
+                <div class="col-md-12 ">
+                    <div class="login-or">
+                        <hr class="hr-or">
+                        <span class="span-or"></span>
                     </div>
-                    <div class="form-group">
-                        <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
-                    </div>
-                    <div class="col-md-12 text-center ">
-                        <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
-                    </div>
-                    <div class="col-md-12 ">
-                        <div class="login-or">
-                            <hr class="hr-or">
-                            <span class="span-or">or</span>
-                        </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                        <p class="text-center">
-                            <a href="javascript:void();" class="google btn mybtn">
-                                <i class="fa fa-google-plus">
-                                </i> Signup using Google
-                            </a>
-                        </p>
-                    </div>
-                    <div class="form-group">
-                        <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
-                    </div>
-                </form>
+                </div>
+                @*<div class="col-md-12 mb-3">
+           <p class="text-center">
+              <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus">
+              </i> Signup using Google
+              </a>
+           </p>
+        </div>*@
+                @*<div class="form-group">
+           <p class="text-center">Don't have account? <a href="#" id="Register">Kayit Ol</a></p>
+        </div>*@
+            </form>
             </div>
             <!-- //login -->
         </div>
@@ -174,7 +172,7 @@
                             <a href="Giris.html">Giris</a>
                         </li>
                         <li>
-                            <a href="Kayit.html">Kayıt Ol</a>
+                            <a href="Register.html">Kayıt Ol</a>
                         </li>
                         <li>
                             <a href="index.html">İletişim</a>
@@ -258,37 +256,29 @@
                 $("#first").fadeIn("fast");
             });
         });
-
         $(function () {
             $("form[name='login']").validate({
                 //rules: {
-
                 //  email: {
                 //    required: true,
                 //    email: true
                 //  },
                 //  password: {
                 //    required: true,
-
                 //  }
                 //},
                 // messages: {
                 //  email: "Please enter a valid email address",
-
                 //  password: {
                 //    required: "Please enter password",
-
                 //  }
-
                 //},
                 submitHandler: function (form) {
                     form.submit();
                 }
             });
         });
-
         $(function () {
-
             $("form[name='registration']").validate({
                 rules: {
                     firstname: "required",
@@ -302,7 +292,6 @@
                         minlength: 5
                     }
                 },
-
                 messages: {
                     firstname: "Please enter your firstname",
                     lastname: "Please enter your lastname",
@@ -312,13 +301,10 @@
                     },
                     email: "Please enter a valid email address"
                 },
-
                 submitHandler: function (form) {
                     form.submit();
                 }
             });
         });
-
-
     </script>
 }

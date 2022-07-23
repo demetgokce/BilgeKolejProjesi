@@ -1946,6 +1946,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Views\OgrenciIslem\" />
   </ItemGroup>
 
 </Project>
