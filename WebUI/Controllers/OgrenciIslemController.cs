@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WebUI.Controllers
 {
-    [Authorize(Roles = "Ogrenci")]
+    
     public class OgrenciIslemController : Controller
     {
 

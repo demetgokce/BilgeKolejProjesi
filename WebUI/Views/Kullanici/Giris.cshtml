@@ -61,7 +61,7 @@
                                 </li>
                                 <li><a href="index.html">İletişim</a></li>
                                 <li><a href="Giris.html">Giris</a></li>
-                                <li> <a class="btn btn-block" asp-area="" asp-controller="Uyelik" asp-action="Kayit">Kayit Ol</a></li>
+                                <li> <a class="btn btn-block" asp-area="" asp-controller="Kullanici" asp-action="Register">Kayit Ol</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -80,7 +80,7 @@
                 <h3 class="title-w3 mb-5 text-center text-wh font-weight-bold">Login Now</h3>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <form method="post" asp-controller="Kullanici" asp-action="Giris">
+                <form method="post" asp-controller="Areas" asp-action="Admin">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Kullanici Kodu</label>
                         <input type="text" asp-for="UserName" class="form-control" aria-describedby="emailHelp" placeholder="Enter username">

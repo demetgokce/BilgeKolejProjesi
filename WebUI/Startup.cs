@@ -37,7 +37,7 @@ namespace WebUI
 
 
             // AutoMapper Entegrasyonu
-
+            services.AddAutoMapper(typeof(Startup));
             // DAL Katmanindaki Servislerin Register Edilmesi
             //services.AddScoped<IBransRepository,BransRepository>();
             // services.AddScoped<IKullanicilarRepository, KullanicilarRepsitory>();
@@ -53,7 +53,7 @@ namespace WebUI
             services.AddScoped<IKullaniciManager, KullaniciManager>();
             services.AddScoped<IOgrenciManager, OgrenciManager>();
             services.AddScoped<ISiniflarManager, SiniflarManager>();
-            services.AddScoped<IUyelikManager, UyelikManager>();
+           
             services.AddScoped<IOgretmenManager, OgretmenManager>();
 
 
